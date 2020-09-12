@@ -1,6 +1,7 @@
 /* Main style sheet */
 
-html {
+/* Background image code */
+/* html {
     background-image: url('../images/bg.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -11,4 +12,50 @@ html {
     -o-background-size: cover;
     background-size: cover;
     background-color: #6494ec;
+} */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    width: 90%;
+    height: 10vh;
+    margin: auto;
+    align-items: center;
+    font-family: 'Vollkorn', serif;
+    /* background-color: blue; */
+}
+
+.logo-container, .nav-links {
+    display: flex;
+}
+
+.logo {
+    font-weight: 400;
+    margin: 10px;
+}
+
+.logo-container {
+    /* background-color: red; */
+    flex: 1;
+}
+
+nav {
+    /* background-color: purple; */
+    flex: 1;
+}
+
+.nav-links {
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+}
+
+.nav-link {
+    color: rgb(29, 26, 192);
+    text-decoration: none;
 }
