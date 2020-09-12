@@ -14,10 +14,16 @@
     background-color: #6494ec;
 } */
 
+/* @font-face {
+    font-family: Vollkorn;
+    src:('../styles/Vollkorn-Black.ttf')
+} */
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Vollkorn', serif;
 }
 
 header {
@@ -26,7 +32,6 @@ header {
     height: 10vh;
     margin: auto;
     align-items: center;
-    font-family: 'Vollkorn', serif;
     /* background-color: blue; */
 }
 
@@ -56,6 +61,6 @@ nav {
 }
 
 .nav-link {
-    color: rgb(29, 26, 192);
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
