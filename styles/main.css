@@ -1,1 +1,66 @@
 /* Main style sheet */
+
+/* Background image code */
+/* html {
+    background-image: url('../images/bg.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #6494ec;
+} */
+
+/* @font-face {
+    font-family: Vollkorn;
+    src:('../styles/Vollkorn-Black.ttf')
+} */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Vollkorn', serif;
+}
+
+header {
+    display: flex;
+    width: 90%;
+    height: 10vh;
+    margin: auto;
+    align-items: center;
+    /* background-color: blue; */
+}
+
+.logo-container, .nav-links {
+    display: flex;
+}
+
+.logo {
+    font-weight: 400;
+    margin: 10px;
+}
+
+.logo-container {
+    /* background-color: red; */
+    flex: 1;
+}
+
+nav {
+    /* background-color: purple; */
+    flex: 1;
+}
+
+.nav-links {
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+}
+
+.nav-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
