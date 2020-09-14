@@ -21,13 +21,14 @@ body {
 }
 
 .logo-text {
-    color: rgb(266, 266, 226);
+    color: black;
     letter-spacing: 2px;
     font-size: 25px;
+    min-width: 190px;
 }
 
 nav {
-    background-color: lightblue;
+    background-color: rgb(173, 216, 230);
 }
 
 .nav-links {
@@ -45,7 +46,7 @@ nav {
     text-decoration: none;
     letter-spacing: 2px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .burger {
@@ -59,10 +60,44 @@ nav {
     margin: 5px;
 }
 
+.nav-active {
+    transform: translateX(0%);
+}
 
-@media screen and (max-width: 850px){
-    body{
-        display: none;
+
+/* Tablet Breakpoint */
+@media screen and (max-width: 1200px){
+    .nav-links {
+        width: 50%;
+    }
+}
+
+/* Mobile Breakpoint */
+@media screen and (max-width: 800px){
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color:  rgba(173, 216, 230, .2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        min-width: 100px;
+        transform: translateX(100%);
+        transition: transform 0.25s ease-in;
+    }
+    .nav-links li {
+        opacity: 0;
     }
 }
 
