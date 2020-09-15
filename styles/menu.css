@@ -2,8 +2,26 @@
 .toggler {
     display: none;
 }
-nav {
-    background-color: black;
+
+/* Removing nav link styling */
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 1vh;
+}
+
+.nav-links {
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+    display: flex;
+}
+
+header {
+    background-color: blue;
 }
 
 /* Large Tablets Style */
@@ -16,12 +34,17 @@ nav {
     }
 } */
 
-/* Tablet Style */
+/* Tablet and Mobile Style */
 @media screen and (max-width: 800px){
     /* Debug Start */
-    nav {
-        background-color: transparent;
+    header {
+        background-color: red;
     }
+
+    .nav-links {
+        display: inline;
+    }
+
     /* Debug End */
     
     /* Menu Code Start */
