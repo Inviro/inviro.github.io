@@ -6,6 +6,7 @@
     --menu-speed: .75s
 }
 
+/* Start of boilerplate code */
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -15,7 +16,16 @@
 body {
     font-family: 'Vollkorn', serif;
 }
+/* End of boilerplate */
 
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+/* 
 .logo-container, nav {
     display: flex;
     justify-content: space-around;
@@ -72,15 +82,12 @@ nav {
     transform: translateX(0%);
 }
 
-
-/* Tablet Breakpoint */
 @media screen and (max-width: 1200px){
     .nav-links {
         width: 50%;
     }
 }
 
-/* Mobile Breakpoint */
 @media screen and (max-width: 800px){
     .burger {
         display: block;
@@ -106,7 +113,9 @@ nav {
     .nav-links li {
         opacity: 0;
     }
-}
+} */
+
+
 
 /* Background image code */
 /* html {
