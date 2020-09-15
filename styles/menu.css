@@ -3,6 +3,13 @@
     display: none;
 }
 
+.logo-text {
+    color: black;
+    letter-spacing: 2px;
+    font-size: 20px;
+    min-width: 190px;
+}
+
 /* Removing nav link styling */
 .nav-links a {
     color: black;
@@ -191,13 +198,10 @@ header {
         transition: color var(--animation-time) ease;
     }
     /* Menu Code end */
-
     /* Logo Styling Code Start */
     .logo img {
         display: block;
         margin: auto;
-        margin-top: 1vh;
-        margin-bottom: 1vh;
     }
 
     .logo-text {

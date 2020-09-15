@@ -26,6 +26,25 @@ body {
     z-index: 1;
 }
 
+/* Footer Code */
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    padding-bottom: 2.5rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 2.5rem;
+}
+
+/* End Footer Code */
+
 /* 
 .logo-container, nav {
     display: flex;
@@ -117,7 +136,6 @@ nav {
 } */
 
 
-
 /* Background image code */
 /* html {
     background-image: url('../images/bg.jpg');
@@ -171,4 +189,3 @@ nav {
     color: rgb(0, 0, 0);
     text-decoration: none;
 } */
-
