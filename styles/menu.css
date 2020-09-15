@@ -7,21 +7,24 @@ nav {
 }
 
 /* Large Tablets Style */
-@media screen and (max-width: 991px){
+/* @media screen and (max-width: 991px){
     .toggler {
         display: none;
     }
     nav {
         background-color: aqua;
     }
-}
+} */
 
-/* Mobile and Medium Tablet Style */
+/* Tablet Style */
 @media screen and (max-width: 800px){
+    /* Debug Start */
     nav {
         background-color: transparent;
     }
+    /* Debug End */
     
+    /* Menu Code Start */
     .menu-wrap {
         position: fixed;
         top: 0;
@@ -64,7 +67,7 @@ nav {
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all .3s ease;
+        transition: all var(--animation-time) ease;
     }
 
     /* Top and bottom lines */
@@ -100,4 +103,81 @@ nav {
     .menu-wrap .toggler:checked:hover + .burger > div {
         transform: rotate(225deg);
     }
+
+    .menu-wrap .menu {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Show Menu */
+    .menu-wrap .toggler:checked ~ .menu {
+    visibility: visible;
+    }
+    
+    .menu-wrap .toggler:checked ~ .menu > div {
+        transform: scale(1);
+        transition-duration: var(--menu-speed);
+    }
+    
+    .menu-wrap .toggler:checked ~ .menu > div > div {
+        opacity: 1;
+        transition:  opacity 0.4s ease var(--animation-time);
+    }
+
+    .menu-wrap .menu > div {
+        background: var(--overlay-color);
+        border-radius: 50%;
+        width: 200vh;
+        height: 200vh;
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0) translateZ(0);
+        transition: all var(--animation-time) ease;
+    }
+    
+    .menu-wrap .menu > div > div {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        /* transition: opacity var(--animation-time) ease; */
+    }
+    
+    /* Menu bar list styling */
+    .menu-wrap .menu > div > div > ul > li {
+        list-style: none;
+        color: black;
+        font-size: 1.5rem;
+        padding: 2rem;
+    }
+    
+    /* Menu bar links */
+    .menu-wrap .menu > div > div > ul > li > a {
+        color: inherit;
+        text-decoration: none;
+        transition: color var(--animation-time) ease;
+    }
+    /* Menu Code end */
+
+    /* Logo Styling Code Start */
+    .logo img {
+        display: block;
+        margin: auto;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    .logo-text {
+        text-align: center;
+    }
+    /* Logo Styling Code End */
 }
