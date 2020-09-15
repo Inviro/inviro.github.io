@@ -1,6 +1,6 @@
 /* Main style sheet */
 :root{
-    --primary-color:  rgb(173, 216, 230);
+    --primary-color:  rgba(173, 216, 230, .85);
     --overlay-color:  rgba(173, 216, 230, .2);
     --burger-color: white;
     --menu-speed: .75s

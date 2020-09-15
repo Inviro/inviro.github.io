@@ -1,23 +1,13 @@
-/* Menu style sheet */
-:root{
-    --primary-color:  rgb(173, 216, 230);
-    --overlay-color:  rgba(173, 216, 230, .2);
-    --burger-color: white;
-    --menu-speed: .75s
+/* Desktop Style */
+.toggler {
+    display: none;
+}
+nav {
+    background-color: black;
 }
 
-/* Desktop */
-@media screen and (min-width: 1201px){
-    .toggler {
-        display: none;
-    }
-    nav {
-        background-color: rgb(171, 171, 247);
-    }
-}
-
-/* Tablet */
-@media screen and (max-width: 1200px){
+/* Large Tablets Style */
+@media screen and (max-width: 991px){
     .toggler {
         display: none;
     }
@@ -26,15 +16,16 @@
     }
 }
 
-/* Mobile */
+/* Mobile and Medium Tablet Style */
 @media screen and (max-width: 800px){
     nav {
-        background-color: red;
+        background-color: transparent;
     }
+    
     .menu-wrap {
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         z-index: 1;
     }
 
@@ -45,13 +36,15 @@
         left: 0;
         z-index: 2;
         cursor: pointer;
+        height: 50px;
+        width: 50px;
         opacity: 0;
     }
 
     .menu-wrap .burger {
         position: absolute;
         top: 0;
-        right: 0;
+        left: 0;
         z-index: 1;
         width: 60px;
         height: 60px;
@@ -65,12 +58,13 @@
     /* Hamburger Lines */
     .menu-wrap .burger > div {
         position: relative;
-        width: 100%;
+        width: 60%;
         height: 3px;
         background-color: whitesmoke;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: all .3s ease;
     }
 
     /* Top and bottom lines */
@@ -80,7 +74,7 @@
         position: absolute;
         z-index: 1;
         top: -10px;
-        width: inherit;
+        width: 100%;
         height: inherit;
         background: inherit;
     }
@@ -88,5 +82,22 @@
     /* Moves down bottom line */
     .menu-wrap .burger > div:after {
         top: 10px;
+    }
+
+    /* Toggler animation */
+    .menu-wrap .toggler:checked + .burger > div {
+        transform: rotate(135deg);
+    }
+
+    /* Turns lines into X */
+    .menu-wrap .toggler:checked + .burger > div:before,
+    .menu-wrap .toggler:checked + .burger > div:after {
+        top:0;
+        transform: rotate(90deg);
+    }
+
+    /* Rotate on hover */
+    .menu-wrap .toggler:checked:hover + .burger > div {
+        transform: rotate(225deg);
     }
 }
