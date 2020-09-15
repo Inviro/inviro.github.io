@@ -1,0 +1,92 @@
+/* Menu style sheet */
+:root{
+    --primary-color:  rgb(173, 216, 230);
+    --overlay-color:  rgba(173, 216, 230, .2);
+    --burger-color: white;
+    --menu-speed: .75s
+}
+
+/* Desktop */
+@media screen and (min-width: 1201px){
+    .toggler {
+        display: none;
+    }
+    nav {
+        background-color: rgb(171, 171, 247);
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 1200px){
+    .toggler {
+        display: none;
+    }
+    nav {
+        background-color: aqua;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 800px){
+    nav {
+        background-color: red;
+    }
+    .menu-wrap {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    .menu-wrap .toggler {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        cursor: pointer;
+        opacity: 0;
+    }
+
+    .menu-wrap .burger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+        padding: 1vh;
+        background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Hamburger Lines */
+    .menu-wrap .burger > div {
+        position: relative;
+        width: 100%;
+        height: 3px;
+        background-color: whitesmoke;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Top and bottom lines */
+    .menu-wrap .burger > div:before, 
+    .menu-wrap .burger > div:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: inherit;
+        height: inherit;
+        background: inherit;
+    }
+
+    /* Moves down bottom line */
+    .menu-wrap .burger > div:after {
+        top: 10px;
+    }
+}
