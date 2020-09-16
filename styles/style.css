@@ -1,7 +1,7 @@
 /* Main style sheet */
 :root{
     --primary-color:  rgba(173, 216, 230, 1);
-    --overlay-color:  rgba(112, 168, 201, 0.568);
+    --overlay-color:  rgba(173, 216, 230, .3);
     --burger-color: white;
     --menu-speed: .75s;
     --animation-time: .3s;

@@ -1,4 +1,11 @@
 /* Desktop Style */
+
+/* Debug Start */
+header {
+    background-color: cadetblue;
+}
+/* Debug End */
+
 .toggler {
     display: none;
 }
@@ -31,32 +38,17 @@
     text-decoration: underline;
 }
 
-header {
-    background-color: blue;
-}
-
-/* Large Tablets Style */
-/* @media screen and (max-width: 991px){
-    .toggler {
-        display: none;
-    }
-    nav {
-        background-color: aqua;
-    }
-} */
-
 /* Tablet and Mobile Style */
 @media screen and (max-width: 800px){
     /* Debug Start */
     header {
-        background-color: red;
+        background-color: lightcoral;
     }
+    /* Debug End */
 
     .nav-links {
         display: inline;
     }
-
-    /* Debug End */
     
     /* Menu Code Start */
     .menu-wrap {
