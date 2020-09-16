@@ -1,7 +1,9 @@
+@import url("/styles/menu.css");
+
 /* Main style sheet */
 :root{
-    --primary-color:  rgba(173, 216, 230, .85);
-    --overlay-color:  rgba(173, 216, 230, .2);
+    --primary-color:  rgba(173, 216, 230, 1);
+    --overlay-color:  rgba(112, 168, 201, 0.568);
     --burger-color: white;
     --menu-speed: .75s;
     --animation-time: .3s;
@@ -25,6 +27,33 @@ body {
     right: 0;
     z-index: 1;
 }
+
+/* Footer Code */
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    padding-bottom: 2.5rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+footer a {
+    font-size: 40px;
+    color: white;
+}
+/* End Footer Code */
 
 /* 
 .logo-container, nav {
@@ -117,7 +146,6 @@ nav {
 } */
 
 
-
 /* Background image code */
 /* html {
     background-image: url('../images/bg.jpg');
@@ -171,4 +199,3 @@ nav {
     color: rgb(0, 0, 0);
     text-decoration: none;
 } */
-
