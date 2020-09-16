@@ -1,4 +1,11 @@
 /* Desktop Style */
+
+/* Debug Start */
+header {
+    background-color: cadetblue;
+}
+/* Debug End */
+
 .toggler {
     display: none;
 }
@@ -11,6 +18,13 @@
 }
 
 /* Removing nav link styling */
+.nav-links {
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+    display: flex;
+}
+
 .nav-links a {
     color: black;
     text-decoration: none;
@@ -20,39 +34,21 @@
     margin: 1vh;
 }
 
-.nav-links {
-    justify-content: space-around;
-    list-style: none;
-    font-weight: 500;
-    display: flex;
+.nav-links a:hover {
+    text-decoration: underline;
 }
-
-header {
-    background-color: blue;
-}
-
-/* Large Tablets Style */
-/* @media screen and (max-width: 991px){
-    .toggler {
-        display: none;
-    }
-    nav {
-        background-color: aqua;
-    }
-} */
 
 /* Tablet and Mobile Style */
 @media screen and (max-width: 800px){
     /* Debug Start */
     header {
-        background-color: red;
+        background-color: lightcoral;
     }
+    /* Debug End */
 
     .nav-links {
         display: inline;
     }
-
-    /* Debug End */
     
     /* Menu Code Start */
     .menu-wrap {
@@ -196,6 +192,11 @@ header {
         color: inherit;
         text-decoration: none;
         transition: color var(--animation-time) ease;
+    }
+
+    /* Menu bar links */
+    .menu-wrap .menu > div > div > ul > li > a:hover {
+        text-decoration: underline;
     }
     /* Menu Code end */
     /* Logo Styling Code Start */

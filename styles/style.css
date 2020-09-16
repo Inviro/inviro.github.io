@@ -1,9 +1,7 @@
-@import url("/styles/menu.css");
-
 /* Main style sheet */
 :root{
     --primary-color:  rgba(173, 216, 230, 1);
-    --overlay-color:  rgba(112, 168, 201, 0.568);
+    --overlay-color:  rgba(173, 216, 230, .3);
     --burger-color: white;
     --menu-speed: .75s;
     --animation-time: .3s;
@@ -53,6 +51,11 @@ footer a {
     font-size: 40px;
     color: white;
 }
+
+footer a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 /* End Footer Code */
 
 /* 
