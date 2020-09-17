@@ -2,6 +2,7 @@
 /* Debug Start */
 header {
     background-color: cadetblue;
+    height: 13vh;
 }
 /* Debug End */
 
@@ -20,7 +21,6 @@ header {
 .logo {
     display: block;
     margin: auto;
-    margin-top: 1vh;
 }
 /* Logo Styling Code End */
 
@@ -50,6 +50,7 @@ header {
 @media screen and (max-width: 800px){
     /* Debug Start */
     header {
+        height: 8vh;
         background-color: lightcoral;
     }
     /* Debug End */
