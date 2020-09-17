@@ -1,8 +1,8 @@
 /* Desktop Style */
-
 /* Debug Start */
 header {
     background-color: cadetblue;
+    height: 13vh;
 }
 /* Debug End */
 
@@ -10,12 +10,19 @@ header {
     display: none;
 }
 
+/* Logo Styling Code Start */
 .logo-text {
     color: black;
     letter-spacing: 2px;
     font-size: 20px;
     min-width: 190px;
+    text-align: center;
 }
+.logo {
+    display: block;
+    margin: auto;
+}
+/* Logo Styling Code End */
 
 /* Removing nav link styling */
 .nav-links {
@@ -23,6 +30,7 @@ header {
     list-style: none;
     font-weight: 500;
     display: flex;
+    margin: 1vh;
 }
 
 .nav-links a {
@@ -31,7 +39,7 @@ header {
     letter-spacing: 2px;
     font-weight: bold;
     font-size: 20px;
-    margin: 1vh;
+    margin: 2vh;
 }
 
 .nav-links a:hover {
@@ -42,6 +50,7 @@ header {
 @media screen and (max-width: 800px){
     /* Debug Start */
     header {
+        height: 8vh;
         background-color: lightcoral;
     }
     /* Debug End */
@@ -199,14 +208,4 @@ header {
         text-decoration: underline;
     }
     /* Menu Code end */
-    /* Logo Styling Code Start */
-    .logo img {
-        display: block;
-        margin: auto;
-    }
-
-    .logo-text {
-        text-align: center;
-    }
-    /* Logo Styling Code End */
 }
