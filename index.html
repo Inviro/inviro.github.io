@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Abraham Chen">
     <meta name="description" content="Personal website for Abraham Chen">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'"> -->
     <!-- Site Metadata End -->
 
     <!-- Favicon Code Start -->
@@ -19,7 +21,11 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Favicon Code End -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@900;900&display=swap" rel="stylesheet"> 
+    <!-- Preloading Content -->
+    <link rel="preload" as="font" href="/webfonts/fa-solid-900.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/webfonts/fa-brands-400.woff2" type="font/woff2" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@500&display=swap" rel="stylesheet"> 
     <link href="styles/fontawesome-all.min.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/menu.css" rel="stylesheet">
@@ -43,7 +49,7 @@
                 <ul class="nav-links">
                   <li><a class = "nav-link" href="#Home">Home</a></li>
                   <li><a class = "nav-link" href="#Projects">Projects</a></li>
-                  <li><a class = "nav-link" href="#Resume">Resume</a></li>
+                  <li><a class = "nav-link" href="/documents/ResumeAbrahamChen.pdf">Resume</a></li>
                   <li><a class = "nav-link" href="#Contact">Contact</a></li>
                 </ul>
               </div>
