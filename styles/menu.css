@@ -2,7 +2,7 @@
 /* Debug Start */
 header {
     background-color: cadetblue;
-    height: 13vh;
+    /* height: 13vh; */
 }
 /* Debug End */
 
@@ -23,6 +23,11 @@ header {
     margin: auto;
 }
 /* Logo Styling Code End */
+
+nav {
+    /* background-color: red; */
+    /* margin-bottom: 2vh; */
+}
 
 /* Removing nav link styling */
 .nav-links {
