@@ -29,7 +29,7 @@ body {
 /* Footer Code */
 body {
     position: relative;
-    min-height: 120vh;
+    min-height: 100vh;
 }
 
 .content-wrap {
@@ -40,7 +40,7 @@ footer {
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 8vh;
+    height: 9vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
