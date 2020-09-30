@@ -1,7 +1,7 @@
 /* Desktop Style */
 /* Debug Start */
-#home {
-    background-color: cadetblue;
+header {
+    background-color: rgb(159, 212, 255);
     padding-top: .5vh;
     padding-bottom: 1vh;
 }
@@ -54,9 +54,9 @@
 /* Tablet and Mobile Style */
 @media screen and (max-width: 800px){
     /* Debug Start */
-    header {
+    /* header {
         background-color: lightcoral;
-    }
+    } */
     /* Debug End */
 
     .nav-links {
