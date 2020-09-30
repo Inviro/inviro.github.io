@@ -1,7 +1,9 @@
 /* Desktop Style */
 /* Debug Start */
-header {
+#home {
     background-color: cadetblue;
+    padding-top: .5vh;
+    padding-bottom: 1vh;
 }
 /* Debug End */
 
@@ -17,6 +19,11 @@ header {
     min-width: 190px;
     text-align: center;
 }
+.logo-subtext {
+    color: darkslategray;
+    font-size: 12px;
+    text-align: center;
+}
 .logo {
     display: block;
     margin: auto;
@@ -28,7 +35,7 @@ header {
     list-style: none;
     font-weight: 500;
     display: flex;
-    margin: 1vh;
+    margin: auto;
 }
 
 .nav-links a {
