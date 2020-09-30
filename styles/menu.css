@@ -2,7 +2,6 @@
 /* Debug Start */
 header {
     background-color: cadetblue;
-    height: 13vh;
 }
 /* Debug End */
 
@@ -49,7 +48,6 @@ header {
 @media screen and (max-width: 800px){
     /* Debug Start */
     header {
-        height: 8vh;
         background-color: lightcoral;
     }
     /* Debug End */
