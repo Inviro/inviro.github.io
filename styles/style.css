@@ -58,7 +58,12 @@ footer a:hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    /* align-content: center; */
+    background-color: var(--primary-color);
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
     min-height: 80vh;
 }
 /* End Home Section */
@@ -111,6 +116,7 @@ header {
     font-weight: bold;
     font-size: 20px;
     margin: 2vh;
+    background-color: rgba(255, 255, 255, .25);
 }
 
 .nav-links a:hover {
@@ -247,7 +253,6 @@ header {
         align-items: center;
         justify-content: center;
         transform: scale(0);
-        /* transition: all var(--animation-time) ease-out; */
     }
     
     .menu-wrap .menu > div > div {
@@ -255,7 +260,6 @@ header {
         max-width: 90vw;
         max-height: 100vh;
         opacity: 0;
-        /* transition: opacity var(--animation-time) ease-out; */
     }
     
     /* Menu bar list styling */
@@ -281,64 +285,7 @@ header {
 }
 /* End Menu Section */
 
-/* 
-.logo-container, nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 8vh;
-}
-
-.logo {
-    margin-right: 20px;
-}
-
-.logo-text {
-    color: black;
-    letter-spacing: 2px;
-    font-size: 25px;
-    min-width: 190px;
-}
-
-nav {
-    background-color: var(--primary-color)
-}
-
-.nav-links {
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
-}
-
-.nav-links, .burger div {
-    color: black;
-}
-
-.nav-links a {
-    color: black;
-    text-decoration: none;
-    letter-spacing: 2px;
-    font-weight: bold;
-    font-size: 20px;
-    margin: 1vh;
-}
-
-.burger, .toggler {
-    display: none;
-}
-
-.burger div {
-    background-color: var(--burger-color);
-    width: 25px;
-    height: 3px;
-    margin: 5px;
-}
-
-.nav-active {
-    transform: translateX(0%);
-}
-
-@media screen and (max-width: 1200px){
+/* @media screen and (max-width: 1200px){
     .nav-links {
         width: 50%;
     }
