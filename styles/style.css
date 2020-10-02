@@ -54,7 +54,11 @@ footer a:hover {
 /* Start Home Section */
 #home {
     background-image: url('/images/bg.jpg');
-    align-content: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* align-content: center; */
     min-height: 80vh;
 }
 /* End Home Section */
