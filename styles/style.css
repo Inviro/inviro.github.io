@@ -64,7 +64,7 @@ footer a:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
 
-    min-height: 80vh;
+    min-height: 140vh;
 }
 /* End Home Section */
 
@@ -99,14 +99,19 @@ header {
     display: block;
     margin: auto;
 }
+.logo-wrap {
+    padding-top: 4vh;
+}
 /* Logo Styling Code End */
 /* Removing nav link styling */
 .nav-links {
+    position: fixed;
     justify-content: space-around;
     list-style: none;
     font-weight: 500;
     display: flex;
     margin: auto;
+    background-color: rgba(255, 255, 255, .90);
 }
 
 .nav-links a {
@@ -116,7 +121,6 @@ header {
     font-weight: bold;
     font-size: 20px;
     margin: 2vh;
-    background-color: rgba(255, 255, 255, .25);
 }
 
 .nav-links a:hover {
@@ -130,9 +134,13 @@ header {
         background-color: lightcoral;
     } */
     /* Debug End */
+    .logo-wrap {
+        padding-top: 0;
+    }
 
     .nav-links {
         display: inline;
+        position: relative;
     }
     
     /* Menu Code Start */
