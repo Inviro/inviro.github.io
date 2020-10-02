@@ -20,7 +20,7 @@ body {
 }
 /* End of boilerplate */
 
-/* Footer Code */
+/* Start Footer Section */
 body {
     position: relative;
     min-height: 100vh;
@@ -49,7 +49,233 @@ footer a {
 footer a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-/* End Footer Code */
+/* End Footer Section */
+
+/* Start Home Section */
+#home {
+    background-image: url('/images/bg.jpg');
+    align-content: center;
+    min-height: 80vh;
+}
+/* End Home Section */
+
+/* Start Menu Section */
+/* Desktop Style */
+/* Debug Start */
+header {
+    background-color: rgb(159, 212, 255);
+    padding-top: .5vh;
+    padding-bottom: 1vh;
+}
+/* Debug End */
+
+.toggler {
+    display: none;
+}
+
+/* Logo Styling Code Start */
+.logo-text {
+    color: black;
+    letter-spacing: 2px;
+    font-size: 20px;
+    min-width: 190px;
+    text-align: center;
+}
+.logo-subtext {
+    color: darkslategray;
+    font-size: 12px;
+    text-align: center;
+}
+.logo {
+    display: block;
+    margin: auto;
+}
+/* Logo Styling Code End */
+/* Removing nav link styling */
+.nav-links {
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+    display: flex;
+    margin: auto;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 2vh;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Tablet and Mobile Style */
+@media screen and (max-width: 800px){
+    /* Debug Start */
+    /* header {
+        background-color: lightcoral;
+    } */
+    /* Debug End */
+
+    .nav-links {
+        display: inline;
+    }
+    
+    /* Menu Code Start */
+    .menu-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .menu-wrap .toggler {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        cursor: pointer;
+        height: 50px;
+        width: 50px;
+        opacity: 0;
+    }
+
+    .menu-wrap .burger {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+        padding: 1vh;
+        background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Hamburger Lines */
+    .menu-wrap .burger > div {
+        position: relative;
+        width: 60%;
+        height: 3px;
+        background-color: whitesmoke;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all var(--animation-time) ease;
+    }
+
+    /* Top and bottom lines */
+    .menu-wrap .burger > div:before, 
+    .menu-wrap .burger > div:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: inherit;
+        background: inherit;
+    }
+
+    /* Moves down bottom line */
+    .menu-wrap .burger > div:after {
+        top: 10px;
+    }
+
+    /* Toggler animation */
+    .menu-wrap .toggler:checked + .burger > div {
+        transform: rotate(135deg);
+    }
+
+    /* Turns lines into X */
+    .menu-wrap .toggler:checked + .burger > div:before,
+    .menu-wrap .toggler:checked + .burger > div:after {
+        top:0;
+        transform: rotate(90deg);
+    }
+
+    /* Rotate on hover */
+    .menu-wrap .toggler:checked:hover + .burger > div {
+        transform: rotate(225deg);
+    }
+
+    /* Show Menu */
+    .menu-wrap .toggler:checked ~ .menu {
+    visibility: visible;
+    }
+    
+    .menu-wrap .toggler:checked ~ .menu > div {
+        transform: scale(1);
+        transition-duration: var(--menu-speed);
+    }
+    
+    .menu-wrap .toggler:checked ~ .menu > div > div {
+        opacity: 1;
+        transition:  opacity var(--animation-time) ease var(--animation-time);
+    }
+
+    .menu-wrap .menu {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 50%;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-wrap .menu > div {
+        background: var(--overlay-color);
+        border-radius: 50%;
+        width: 200vh;
+        height: 200vh;
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0);
+        /* transition: all var(--animation-time) ease-out; */
+    }
+    
+    .menu-wrap .menu > div > div {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        /* transition: opacity var(--animation-time) ease-out; */
+    }
+    
+    /* Menu bar list styling */
+    .menu-wrap .menu > div > div > ul > li {
+        list-style: none;
+        color: black;
+        font-size: 1.5rem;
+        padding: 2rem;
+    }
+    
+    /* Menu bar links */
+    .menu-wrap .menu > div > div > ul > li > a {
+        color: inherit;
+        text-decoration: none;
+        transition: color var(--animation-time) ease;
+    }
+
+    /* Menu bar links */
+    .menu-wrap .menu > div > div > ul > li > a:hover {
+        text-decoration: underline;
+    }
+    /* Menu Code end */
+}
+/* End Menu Section */
 
 /* 
 .logo-container, nav {
