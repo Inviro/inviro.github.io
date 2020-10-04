@@ -1,7 +1,7 @@
 /* Main style sheet */
 :root{
     /* --primary-color:  rgba(5, 46, 92, 1); */
-    --primary-color: rgba(3, 66, 109, 1);
+    --primary-color: rgba(3, 66, 109, .7);
     --overlay-color:  rgba(159, 212, 255, .5); 
     --burger-color: white;
     --menu-speed: .75s;
@@ -26,10 +26,6 @@ body {
     min-height: 100vh;
 }
 
-.content-wrap {
-    padding-bottom: 2.5rem;
-}
-
 footer {
     position: absolute;
     bottom: 0px;
@@ -51,8 +47,8 @@ footer a:hover {
 }
 /* End Footer Section */
 
-/* Start Home Section */
-#home {
+/* Start Main Section */
+main {
     background-image: url('/images/bg.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -66,13 +62,13 @@ footer a:hover {
 
     min-height: 140vh;
 }
-/* End Home Section */
+/* End Main Section */
 
 /* Start Menu Section */
 /* Desktop Style */
 /* Debug Start */
 header {
-    background-color: rgb(159, 212, 255);
+    background-color: rgba(159, 212, 255, .8);
     padding-top: .5vh;
     padding-bottom: 1vh;
 }
@@ -129,7 +125,7 @@ header {
 
 /* Tablet and Mobile Style */
 @media screen and (max-width: 800px){
-    #home {
+    main {
         background-image: url('/images/bg_tablet.jpg');
     }
     /* Debug Start */
@@ -137,9 +133,9 @@ header {
         background-color: lightcoral;
     } */
     /* Debug End */
-    .logo-wrap {
+    /* .logo-wrap {
         padding-top: 0;
-    }
+    } */
 
     .nav-links {
         display: inline;
@@ -295,6 +291,12 @@ header {
     /* Menu Code end */
 }
 /* End Menu Section */
+
+/* Start Project Section */
+.project {
+    display: flex;
+}
+/* End Project Section */
 
 /* @media screen and (max-width: 1200px){
     .nav-links {
