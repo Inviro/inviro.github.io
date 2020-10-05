@@ -2,8 +2,8 @@
 :root{
     --primary-color:  rgba(5, 46, 92, 1);
     /* --primary-color: rgba(3, 66, 109, .7); */
-    --overlay-color:  rgba(159, 212, 255, .5);
-    --header-color:  rgba(159, 212, 255, .8);
+    --overlay-color:  rgba(150, 212, 255, .95);
+    --header-color:  rgba(150, 212, 255, .8);
     --highlight-color: rgba(255, 255, 255, .90);
     --menu-speed: .75s;
     --animation-time: .3s;
@@ -112,12 +112,12 @@ header {
 }
 
 .nav-links a {
-    color: black;
-    text-decoration: none;
+    color: var(--primary-color);
     letter-spacing: 2px;
     font-weight: bold;
     font-size: 20px;
     margin: 2vh;
+    text-decoration: none;
 }
 
 .nav-links a:hover {
@@ -284,6 +284,13 @@ header {
     /* Menu Code end */
 }
 /* End Menu Section */
+
+@media screen and (max-width: 500px){
+    /* Start Main Section */
+    main {
+        background-image: url('/images/bg_mobile.jpg');
+    }
+}
 
 /* Start Project Section */
 .project {
