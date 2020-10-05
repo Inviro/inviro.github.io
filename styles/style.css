@@ -1,9 +1,10 @@
 /* Main style sheet */
 :root{
-    /* --primary-color:  rgba(5, 46, 92, 1); */
-    --primary-color: rgba(3, 66, 109, .7);
-    --overlay-color:  rgba(159, 212, 255, .5); 
-    --burger-color: white;
+    --primary-color:  rgba(5, 46, 92, 1);
+    /* --primary-color: rgba(3, 66, 109, .7); */
+    --overlay-color:  rgba(159, 212, 255, .5);
+    --header-color:  rgba(159, 212, 255, .8);
+    --highlight-color: rgba(255, 255, 255, .90);
     --menu-speed: .75s;
     --animation-time: .3s;
 }
@@ -39,7 +40,7 @@ footer {
 
 footer a {
     font-size: 4vh;
-    color: white;
+    color: var(--highlight-color);
 }
 
 footer a:hover {
@@ -54,7 +55,7 @@ main {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: var(--primary-color);
+    background-color: var(--overlay-color);
 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -68,7 +69,7 @@ main {
 /* Desktop Style */
 /* Debug Start */
 header {
-    background-color: rgba(159, 212, 255, .8);
+    background-color: var(--header-color);
     padding-top: .5vh;
     padding-bottom: 1vh;
 }
@@ -107,7 +108,7 @@ header {
     font-weight: 500;
     display: flex;
     margin: auto;
-    background-color: rgba(255, 255, 255, .90);
+    background-color: var(--highlight-color);
 }
 
 .nav-links a {
@@ -128,14 +129,6 @@ header {
     main {
         background-image: url('/images/bg_tablet.jpg');
     }
-    /* Debug Start */
-    /* header {
-        background-color: lightcoral;
-    } */
-    /* Debug End */
-    /* .logo-wrap {
-        padding-top: 0;
-    } */
 
     .nav-links {
         display: inline;
@@ -181,7 +174,7 @@ header {
         position: relative;
         width: 60%;
         height: 3px;
-        background-color: whitesmoke;
+        background-color: var(--highlight-color);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -296,92 +289,3 @@ header {
 .project {
     display: flex;
 }
-/* End Project Section */
-
-/* @media screen and (max-width: 1200px){
-    .nav-links {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 800px){
-    .burger {
-        display: block;
-        cursor: pointer;
-    }
-    
-    body {
-        overflow-x: hidden;
-    }
-    .nav-links {
-        position: absolute;
-        right: 0px;
-        height: 92vh;
-        top: 8vh;
-        background-color: var(--overlay-color);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 30%;
-        min-width: 100px;
-        justify-content: space-around;
-    }
-    .nav-links li {
-        opacity: 0;
-    }
-} */
-
-
-/* Background image code */
-/* html {
-    background-image: url('../images/bg.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-color: #6494ec;
-} */
-
-/*
-header {
-    display: flex;
-    width: 90%;
-    height: 10vh;
-    margin: auto;
-    align-items: center;
-    background-color: blue;
-}
-
-.logo-container, .nav-links {
-    display: flex;
-}
-
-.logo {
-    font-weight: 400;
-    margin: 10px;
-}
-
-.logo-container {
-    background-color: red;
-    flex: 1;
-}
-
-nav {
-    background-color: purple;
-    flex: 1;
-}
-
-.nav-links {
-    justify-content: space-around;
-    list-style: none;
-    font-weight: 500;
-}
-
-.nav-link {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-} */
