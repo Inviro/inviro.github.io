@@ -31,11 +31,7 @@ footer {
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 9vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--primary-color);
+    height: 10vh;
 }
 
 footer a {
@@ -46,6 +42,19 @@ footer a {
 footer a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
+
+footer p {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1vh;
+    color: gainsboro;
+}
+
+footer > div {
+    display: flex;
+    justify-content: space-around;
+}
+
 /* End Footer Section */
 
 /* Start Main Section */
