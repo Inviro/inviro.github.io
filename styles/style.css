@@ -305,17 +305,22 @@ header {
 #projects {
     background-color: rgba(255, 255, 255, .2);
     padding-bottom: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 /* Header */
 #projects > h1 {
     font-size: xx-large;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    grid-column: 1/4;
+    padding-bottom: 2vh;
 }
 
-/* .project {
-    display: flex;
-} */
+#projects > div {
+    display: grid;
+    text-align: center;
+    border: 1px solid black;
+    padding: 1vh;
+}
 
 /* End Project Section */
