@@ -2,7 +2,8 @@
 :root{
     --primary-color:  rgba(5, 46, 92, 1);
     /* --primary-color: rgba(3, 66, 109, .7); */
-    --overlay-color:  rgba(150, 212, 255, .95);
+    /* --overlay-color:  rgba(150, 212, 255, .95); */
+    --overlay-color:  rgba(245, 250, 255, 0.95);
     --header-color:  rgba(150, 212, 255, .8);
     /* --header-color:  rgb(255, 255, 255); */
     --highlight-color: rgba(255, 255, 255, .90);
