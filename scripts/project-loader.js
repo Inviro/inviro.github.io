@@ -6,8 +6,12 @@ function loadProject(entry) {
     const userName = "Inviro";
     let title = entry.firstElementChild.innerHTML;
     let caption = entry.lastElementChild.innerHTML;
+    // title = "<a href=" + "https://github.com/inviro/" + title + ">" + title + "</a>";
+    // console.log("<a href=" + "https://github.com/inviro/" + title + ">" + title + "</a>");
+    // entry.firstChild.innerHTML = "HELLO WORLD";
     console.log(title);
     console.log(caption);
+    console.log(entry);
     // switch(title){
     //     case "Illud":
     //         break;
@@ -19,12 +23,14 @@ function loadProject(entry) {
    * loadProjects runs on window load and edits the HTML dom with the project information for each project
 */
 function loadProjects() {
-    var projectList = document.getElementsByClassName("project");
+    let projectList = document.getElementsByClassName("project");
     for(var i = 0; i < projectList.length; i++) {
-        loadProject(projectList[i]);
+        loadProject(projectList.item(i));
     }
+    console.log(projectList);
 }
 
 window.onload = function() {
     loadProjects();
+    // console.log("Hello World");
 }
