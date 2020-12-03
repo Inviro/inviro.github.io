@@ -9,6 +9,7 @@
     --highlight-color: rgba(255, 255, 255, .90);
     --menu-speed: .75s;
     --animation-time: .3s;
+    scroll-behavior: smooth;
 }
 
 /* Start of boilerplate code */
@@ -320,8 +321,9 @@ header {
     font-size: xx-large;
     text-align: center;
     grid-column: 1/4;
-    letter-spacing: 2px;
+    letter-spacing: .3rem;
     text-shadow: 1px 1px 1px gainsboro;
+    background-color: rgba(255, 255, 255, .4);
 }
 
 #project-wrap{
