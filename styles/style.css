@@ -2,11 +2,10 @@
 :root{
     --primary-color:  rgba(5, 46, 92, 1);
     /* --primary-color: rgba(3, 66, 109, .7); */
-    /* --overlay-color:  rgba(150, 212, 255, .95); */
     --overlay-color:  rgba(245, 250, 255, 0.95);
+    /* --overlay-color:  rgba(150, 212, 255, .95); */
     --header-color:  pink;
     /* --header-color:  rgba(150, 212, 255, .8); */
-    /* --header-color:  rgb(255, 255, 255); */
     --highlight-color: rgba(255, 255, 255, .90);
     --menu-speed: .75s;
     --animation-time: .3s;
@@ -35,6 +34,7 @@ footer {
     bottom: 0px;
     width: 100%;
     height: 10vh;
+    text-shadow: 1px 1px 1px black;
 }
 
 footer a {
@@ -112,6 +112,7 @@ header {
     padding-top: 35vh;
 }
 /* Logo Styling Code End */
+
 /* Removing nav link styling */
 .nav-links {
     position: fixed;
@@ -131,11 +132,17 @@ header {
     font-size: 20px;
     margin: 2vh;
     text-decoration: none;
+    position: relative;
 }
 
 .nav-links a:hover {
     text-decoration: underline;
 }
+/* Nav Link Animation Start */
+/* .nav-links a {
+
+} */
+/* Nav Link Animation End */
 
 /* Tablet and Mobile Style */
 @media screen and (max-width: 800px){
@@ -308,24 +315,33 @@ header {
 }
 
 /* Start Project Section */
-#projects {
-    background-color: rgba(255, 255, 255, .2);
-    padding-bottom: 50vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-/* Header */
 #projects > h1 {
+    padding: 2vh;
     font-size: xx-large;
     text-align: center;
     grid-column: 1/4;
-    padding-bottom: 2vh;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px gainsboro;
 }
 
-#projects > div {
+#project-wrap{
+    padding-bottom: 50vh;
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+#project-wrap > div {
     display: grid;
     text-align: center;
     border: 1px solid black;
     padding: 1vh;
+}
+
+.project {
+    background-color: rgba(255, 255, 255, .8);
 }
 /* End Project Section */
