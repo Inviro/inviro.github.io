@@ -1,11 +1,8 @@
 /* Main style sheet */
 :root{
     --primary-color:  rgba(5, 46, 92, 1);
-    /* --primary-color: rgba(3, 66, 109, .7); */
     --overlay-color:  rgba(245, 250, 255, 0.95);
-    /* --overlay-color:  rgba(150, 212, 255, .95); */
     --header-color:  pink;
-    /* --header-color:  rgba(150, 212, 255, .8); */
     --highlight-color: rgba(255, 255, 255, .90);
     --menu-speed: .75s;
     --animation-time: .3s;
@@ -17,6 +14,11 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+}
+
+html{
+    height: 100%;
+    overflow: auto;
 }
 
 body {
@@ -345,5 +347,9 @@ header {
 
 .project {
     background-color: rgba(255, 255, 255, .8);
+}
+
+.project > a {
+    
 }
 /* End Project Section */

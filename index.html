@@ -25,9 +25,10 @@
     <!-- Preloading Content End -->
 
     <!-- Async Loading Content Start -->
+    <link rel="stylesheet" href="styles/style.css" media="print" onload="this.media='all'; this.onload=null;">
+    <!-- <link rel="stylesheet" href="styles/style.min.css" media="print" onload="this.media='all'; this.onload=null;"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@700&display=swap" media="print" onload="this.media='all'; this.onload=null;">
     <link rel="stylesheet" href="styles/fontawesome-all.min.css" media="print" onload="this.media='all'; this.onload=null;">
-    <link rel="stylesheet" href="styles/style.css" media="print" onload="this.media='all'; this.onload=null;">
     <!-- Async Loading Content End -->
     <script src = "scripts/project-loader.js"></script>
     <title>Abraham Chen | Developer </title>
@@ -52,7 +53,7 @@
           </div>
         </nav>
         <div class="logo-wrap" id = "home">
-          <img class="logo" src="apple-touch-icon.png" alt="icon">
+          <img class="logo" src="apple-touch-icon.png" alt="icon" height="180" width="180">
           <h1 class="logo-text">Abraham Chen</h1>
           <!-- <h2 class="logo-subtext">Student | Tech Enthusiast | Developer</h2> -->
           <h2 class="logo-subtext">Personal Website Mockup</h2>
@@ -61,16 +62,16 @@
       <main>
         <section id = "projects">
           <h1>Projects</h1>
-            <div id="project-wrap">
-              <div class="project">
+            <div class = "project" id="project-wrap">
+              <div id="project-1">
                 <h2 class="title">Illud</h2>
                 <p class="caption">First Caption: The quick brown fox jumped over the lazy dogs.</p>
               </div>
-              <div class="project">
+              <div class = "project" id="project-2">
                 <h2 class="title">CaptiveFi</h2>
                 <p class="caption">Second Caption: The quick brown fox jumped over the lazy dogs.</p>
               </div>
-              <div class="project">
+              <div class = "project" id="project-3">
                 <h2 class="title">Cerberus</h2>
                 <p class="caption">Third Caption: he quick brown fox jumped over the lazy dogs.</p>
               </div>
