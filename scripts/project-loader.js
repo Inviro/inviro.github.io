@@ -6,11 +6,11 @@ function loadProject(entryID) {
     let entry = document.getElementById(entryID);
     let title = entry.firstElementChild.innerHTML;
     let caption = entry.lastElementChild.innerHTML;
-    console.log(title);
-    console.log(caption);
 
-    title = "<a href=" + "https://github.com/inviro/" + title + ">" + title + "</a>";
-    entry.firstElementChild.innerHTML = title;
+    let result;
+
+    result = "<a href=" + "https://github.com/inviro/" + title + ">" + title + "</a>";
+    entry.firstElementChild.innerHTML = result;
     // console.log(temp);
     // const userName = "Inviro";
     // let title = entry.firstElementChild.innerHTML;
@@ -34,11 +34,10 @@ function loadProject(entryID) {
    * loadProjects runs on window load and edits the HTML dom with the project information for each project
 */
 function loadProjects() {
-
     let projectListLength = document.getElementsByClassName("project").length;
     // console.log(projectListLength);
     for(var i = 0; i < projectListLength; i++) {
-        loadProject("project-" + (i + 1));
+        loadProject("project-" + i);
     }
 }
 

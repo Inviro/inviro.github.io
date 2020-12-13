@@ -66,18 +66,16 @@ footer > div {
 /* End Footer Section */
 
 /* Start Main Section */
-main {
-    background-image: url('/images/bg.jpg');
+#bg-image-wrap {
+    background-image: url('/images/bg.jpg');;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: var(--overlay-color);
 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-
     min-height: 140vh;
 }
 /* End Main Section */
@@ -151,14 +149,15 @@ header {
 
 /* Tablet and Mobile Style */
 @media screen and (max-width: 800px){
-    main {
+    #bg-image-wrap {
+        /* background-color: red; */
         background-image: url('/images/bg_tablet.jpg');
     }
 
     .nav-links {
         display: inline;
         position: relative;
-        right:auto;
+        right: auto;
     }
     
     /* Menu Code Start */
@@ -314,7 +313,7 @@ header {
 
 @media screen and (max-width: 500px){
     /* Start Main Section */
-    main {
+    #bg-image-wrap {
         background-image: url('/images/bg_mobile.jpg');
     }
 }
@@ -322,24 +321,26 @@ header {
 /* Start Project Section */
 #projects > h1 {
     padding: 2vh;
+    padding-top: 5vh;
     font-size: xx-large;
     text-align: center;
     /* grid-column: 1/4; */
     letter-spacing: .3rem;
     text-shadow: 2px 2px 2px var(--highlight-color);
-    margin: auto;
+    /* margin: auto; */
     /* background-color: rgba(255, 255, 255, .4); */
     /* background-color: #caf0f89a; */
     color: var(--primary-color);
-    margin-bottom: 5vh;
+    /* margin-top: 2vh; */
+    /* margin-bottom: 5vh; */
 }
 
 #project-wrap{
     display: grid;
     column-gap: 1rem;
     row-gap: 1rem;
-
     margin: auto;
+
     /* background-color: rgb(30, 97, 109); */
     
 
@@ -390,5 +391,10 @@ header {
 .project > h2 > a {
     text-decoration: none;
     color: var(--primary-color);
+}
+
+.project > h2 > a:hover {
+    text-decoration: underline;
+    color: #03055e81;
 }
 /* End Project Section */
