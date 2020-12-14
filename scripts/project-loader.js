@@ -5,29 +5,20 @@
 function loadProject(entryID) {
     let entry = document.getElementById(entryID);
     let title = entry.firstElementChild.innerHTML;
-    let caption = entry.lastElementChild.innerHTML;
+    // let caption = entry.lastElementChild.innerHTML;
 
     let result;
+    const PROJECT_ID = entryID.split("-")[1]; // Gets project ID
 
+    // Setting title to a github link
     result = "<a href=" + "https://github.com/inviro/" + title + ">" + title + "</a>";
     entry.firstElementChild.innerHTML = result;
-    // console.log(temp);
-    // const userName = "Inviro";
-    // let title = entry.firstElementChild.innerHTML;
-    // let caption = entry.lastElementChild.innerHTML;
-    // title = "<a href=" + "https://github.com/inviro/" + title + ">" + title + "</a>";
-    // console.log("<a href=" + "https://github.com/inviro/" + title + ">" + title + "</a>");
-    // entry.firstChild.innerHTML = "HELLO WORLD";
 
-    // console.log(title);
-    // console.log(caption);
-    // console.log(entry);
-
-    // switch(title){
-    //     case "Illud":
-    //         break;
-    //     default:
-    // }
+    // Setting repo stats of the Github repository dynamically based on results from JavaScript
+    result = "<a href=\"https://github.com/inviro/" + title + "/watchers\" aria-label = \"" + title + " Watchers\"><i class=\"fa fa-lg fa-eye\"> " + 10 + "</i></a>";
+    result += "<a href=\"https://github.com/inviro/" + title + "/stargazers\" aria-label = \"" + title + " Stargazers\"><i class=\"fa fa-lg fa-star\"> " + 10 + "</i></a>";
+    result += "<a href=\"https://github.com/inviro/" + title + "/network/members\" aria-label = \"" + title + " Branches\"><i class=\"fa fa-lg fa-code-branch\"> " + 10 + "</i></a>";
+    document.getElementById("repo-stats-" + PROJECT_ID).innerHTML = result;
 }
 
 /**
@@ -35,7 +26,6 @@ function loadProject(entryID) {
 */
 function loadProjects() {
     let projectListLength = document.getElementsByClassName("project").length;
-    // console.log(projectListLength);
     for(var i = 0; i < projectListLength; i++) {
         loadProject("project-" + i);
     }
