@@ -410,6 +410,8 @@ header {
 .project > h2 > a {
     text-decoration: none;
     color: var(--primary-color);
+    margin-left: 2rem;
+    margin-top: .25rem;
 }
 
 .project > h2 > a:hover {
@@ -418,5 +420,8 @@ header {
 
 .project > h2 > a:hover:before {
     content: "\1F517";
+    position: absolute;
+    transform: translate(-35px, -3px);
+    vertical-align: middle;
 }
 /* End Project Section */
