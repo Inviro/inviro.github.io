@@ -1,3 +1,7 @@
+async function getRepoStats(repoUrl) {
+
+}
+
 async function setRepoStats(title, projectID) {
     // const repo_url = "https://github.com/inviro/" + title; // Repository location
     // console.log(fetch(repo_url));
@@ -71,14 +75,21 @@ window.onload = function() {
     // Testing code start
     // const url = "https://github.com/inviro/" + title; // Repository location
 
-    // const watchers;
-    // const stargazers;
-    // const branches;
+    // const watchers = 4;
+    // const stargazers = 5;
+    // const branches = 6;
+
+    // console.log(watchers);
     // fetch(url, {mode: 'cors'}).then(response => {
     //     if(response.ok) {
     //         console.log(response);
+    //     } else {
+    //         console.log(response);
     //     }
     // })
+
+
     // Testing code end
+    // console.log("Hello world");
     loadProjects();
 }

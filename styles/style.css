@@ -118,11 +118,12 @@ header {
 .nav-links {
     position: fixed;
     right: 5vw;
+    top: 1vh;
     justify-content: space-around;
     list-style: none;
     font-weight: 500;
     display: flex;
-    margin: auto;
+    padding-bottom: .2vw;
     background-color: var(--highlight-color);
 }
 
@@ -410,10 +411,11 @@ header {
 .project > h2 > a {
     text-decoration: none;
     color: var(--primary-color);
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     margin-top: .25rem;
 }
 
+/* Styling for hover text on project Repo link */
 .project > h2 > a:hover {
     color: #03585e;
 }
