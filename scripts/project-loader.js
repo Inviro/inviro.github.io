@@ -55,14 +55,33 @@ function loadProjects() {
     }
 }
 
+/**
+   * setThemeLight sets the current theme to light theme
+*/
 function setThemeLight() {
-    console.log('light');
+    let root = document.documentElement;
+    // Setting root css variables
+    root.style.setProperty("--primary-color", "3, 4, 94")
+    root.style.setProperty("--overlay-color", "rgba(245, 250, 255, 0.95)")
+    root.style.setProperty("--header-color", "144, 224, 239")
+    root.style.setProperty("--highlight-color", "rgba(255, 255, 255, .90)")
 }
 
+/**
+   * setThemeDark sets the current theme to dark theme
+*/
 function setThemeDark() {
-    console.log('dark');
+    let root = document.documentElement;
+    // Setting root css variables
+    root.style.setProperty("--primary-color", "255, 255, 255")
+    root.style.setProperty("--overlay-color", "rgba(50, 50, 140, .5)")
+    root.style.setProperty("--header-color", "3, 4, 94")
+    root.style.setProperty("--highlight-color", "#90E0EF")
 }
 
+/**
+   * addThemePicker displays the theme picker, and attaches listeners to the corresponding radio buttons
+*/
 function addThemePicker() {
     document.getElementById('color-theme').style.display = 'inline';
     document.getElementById('theme-light').onclick = setThemeLight;
