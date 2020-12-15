@@ -37,7 +37,8 @@ async function loadProject(entryID) {
     result = "<a href=" + "https://github.com/inviro/" + title + ">" + title + "</a>";
     entry.firstElementChild.innerHTML = result;
 
-    // Adding icons for the github stats that can be be updated with number later on
+    // Adding icons for the github stats that can be be updated dynamically with numbers later on
+    // Uses FontAwesome for the icons
     result = "<a href=\"https://github.com/inviro/" + title + "/watchers\" aria-label = \"" + title + " Watchers\"><i class=\"fa fa-lg fa-eye\" id=\"watch-" + PROJECT_ID +"\"></i></a>";
     result += "<a href=\"https://github.com/inviro/" + title + "/stargazers\" aria-label = \"" + title + " Stargazers\"><i class=\"fa fa-lg fa-star\" id=\"star-" + PROJECT_ID +"\"></i></a>";
     result += "<a href=\"https://github.com/inviro/" + title + "/network/members\" aria-label = \"" + title + " Forks\"><i class=\"fa fa-lg fa-code-branch\" id=\"fork-" + PROJECT_ID + "\"></i></a>";
@@ -83,7 +84,7 @@ function setThemeDark() {
    * addThemePicker displays the theme picker, and attaches listeners to the corresponding radio buttons
 */
 function addThemePicker() {
-    document.getElementById('color-theme').style.display = 'inline';
+    document.getElementById('color-theme').style.display = 'inline'; // Changes display state from none to inline
     document.getElementById('theme-light').onclick = setThemeLight;
     document.getElementById('theme-dark').onclick = setThemeDark;
 }
@@ -91,5 +92,5 @@ function addThemePicker() {
 // Runs on window load
 window.onload = () => {
     addThemePicker();
-    // loadProjects();
+    loadProjects();
 }
