@@ -55,8 +55,18 @@ function loadProjects() {
     }
 }
 
+function setThemeLight() {
+    console.log('light');
+}
+
+function setThemeDark() {
+    console.log('dark');
+}
+
 function addThemePicker() {
-    
+    document.getElementById('color-theme').style.display = 'inline';
+    document.getElementById('theme-light').onclick = setThemeLight;
+    document.getElementById('theme-dark').onclick = setThemeDark;
 }
 
 // Runs on window load

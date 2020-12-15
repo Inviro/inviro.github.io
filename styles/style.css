@@ -279,26 +279,26 @@ header {
     cursor: pointer;
 }
 
-#color-theme > label:hover {
-    border-style: dotted;
+.theme + label:hover {
+    border-style: dotted !important;
 }
 
 #theme-light + label {
     background-color: rgba(255, 255, 255, 0.199);
 }
 
-#theme-light:checked + label {
-    background-color: rgba(255, 255, 255, 0);
-    border-style: dashed;
-}
-
 #theme-dark + label {
     background-color: rgba(var(--primary-color), .5);
 }
 
+#theme-light:checked + label {
+    background-color: rgba(255, 255, 255, 0);
+    border-style: dashed !important;
+}
+
 #theme-dark:checked + label {
     background-color: rgb(var(--primary-color));
-    border-style: dashed;
+    border-style: dashed !important;
 }
 
 /* Add right margin to all children other than the last one */
