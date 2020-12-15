@@ -114,6 +114,7 @@ header {
 .logo-wrap {
     padding-top: 35vh;
     position: relative;
+    height: 100%;
 }
 /* Logo Styling Code End */
 
@@ -149,6 +150,162 @@ header {
 
 } */
 /* Nav Link Animation End */
+
+/* End Menu Section */
+
+/* Start Project Section */
+#projects > h1 {
+    padding: 2vh;
+    padding-top: 5vh;
+    font-size: xx-large;
+    text-align: center;
+    letter-spacing: .3rem;
+    text-shadow: 2px 2px 2px var(--highlight-color);
+    color: rgb(var(--primary-color));
+}
+
+#project-wrap {
+    display: grid;
+    /* column-gap: 1rem; */
+    row-gap: 1.5rem;
+    /* margin: auto; */
+    /* margin-bottom: 20vh; */
+    padding-bottom: 12vh;
+}
+
+.project {
+    margin: auto;
+    padding-left: 1rem;
+    padding-top: .05rem;
+    display: grid;
+    background-color: #caf0f8d7;
+    background-image: url('/images/GitHub-Mark-Light-120px-plus.png');
+    /* background-position: bottom left; */
+    background-position: right -15px bottom -20px;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    /* background-size: cover; */
+    box-shadow: 1px 2px 10px rgb(var(--primary-color));
+    width: 75vw;
+    grid-template-columns: 2fr 2fr 1fr;
+}
+
+.project > h2 {
+    display: grid;
+    width: minmax(40px, auto);
+    margin-right: 5vw;
+    text-align: left;
+}
+
+.subtitle {
+    display: grid;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: left;
+    grid-column: 1/4;
+}
+
+.caption {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-right: .3rem;
+    display: grid;
+    grid-column: 1/4;
+}
+
+.repo-stats {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    display: grid;
+    /* grid-column-start: 1; */
+    grid-column: 1/3;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.repo-stats > a {
+    text-decoration: none;
+    color: rgb(var(--primary-color));
+}
+
+.repo-stats > a > :hover {
+    transform: rotate(5deg);
+}
+
+/* Removing link styling from project links */
+.project > h2 > a {
+    text-decoration: none;
+    color: rgb(var(--primary-color));
+    margin-left: 1.5rem;
+    margin-top: .25rem;
+}
+
+/* Styling for hover text on project Repo link */
+.project > h2 > a:hover {
+    color: #03585e;
+}
+
+.project > h2 > a:hover:before {
+    content: "\1F517";
+    position: absolute;
+    transform: translate(-35px, -3px);
+    vertical-align: middle;
+}
+/* End Project Section */
+/* Styling for Color Theme Picker */
+#color-theme {
+    /* Only displays if JavaScript executes, otherwise is hidden */
+    /* display: none; */
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+}
+
+#color-theme > p {
+    color: var(--highlight-color);
+    text-shadow: 1px 1px 1px rgb(var(--primary-color));
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+#color-theme > input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+#color-theme > label {
+    border-radius: 50%;
+    padding: 8px 20px;
+    border: 3px solid var(--highlight-color);
+    cursor: pointer;
+}
+
+#color-theme > label:hover {
+    border-style: dotted;
+}
+
+#theme-light + label {
+    background-color: rgba(255, 255, 255, 0.199);
+}
+
+#theme-light:checked + label {
+    background-color: rgba(255, 255, 255, 0);
+    border-style: dashed;
+}
+
+#theme-dark + label {
+    background-color: rgba(var(--primary-color), .5);
+}
+
+#theme-dark:checked + label {
+    background-color: rgb(var(--primary-color));
+    border-style: dashed;
+}
+
+/* Add right margin to all children other than the last one */
+#color-theme > label:not(:last-child){
+    margin-right: 1vw;
+}
+/* End Styling for Project Picker */
 
 /* Tablet and Mobile Style */
 @media screen and (max-width: 800px){
@@ -312,164 +469,9 @@ header {
     }
     /* Menu Code end */
 }
-/* End Menu Section */
 
 @media screen and (max-width: 500px){
-    /* Start Main Section */
     #bg-image-wrap {
         background-image: url('/images/bg_mobile.jpg');
     }
 }
-
-/* Start Project Section */
-#projects > h1 {
-    padding: 2vh;
-    padding-top: 5vh;
-    font-size: xx-large;
-    text-align: center;
-    letter-spacing: .3rem;
-    text-shadow: 2px 2px 2px var(--highlight-color);
-    color: rgb(var(--primary-color));
-}
-
-#project-wrap {
-    display: grid;
-    /* column-gap: 1rem; */
-    row-gap: 1.5rem;
-    /* margin: auto; */
-    /* margin-bottom: 20vh; */
-    padding-bottom: 12vh;
-}
-
-.project {
-    margin: auto;
-    padding-left: 1rem;
-    padding-top: .05rem;
-    display: grid;
-    background-color: #caf0f8d7;
-    background-image: url('/images/GitHub-Mark-Light-120px-plus.png');
-    /* background-position: bottom left; */
-    background-position: right -15px bottom -20px;
-    background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-    /* background-size: cover; */
-    box-shadow: 1px 2px 10px rgb(var(--primary-color));
-    width: 75vw;
-    grid-template-columns: 2fr 2fr 1fr;
-}
-
-.project > h2 {
-    display: grid;
-    width: minmax(40px, auto);
-    margin-right: 5vw;
-    text-align: left;
-}
-
-.subtitle {
-    display: grid;
-    margin-top: auto;
-    margin-bottom: auto;
-    text-align: left;
-    grid-column: 1/4;
-}
-
-.caption {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-right: .3rem;
-    display: grid;
-    grid-column: 1/4;
-}
-
-.repo-stats {
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    display: grid;
-    /* grid-column-start: 1; */
-    grid-column: 1/3;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.repo-stats > a {
-    text-decoration: none;
-    color: rgb(var(--primary-color));
-}
-
-.repo-stats > a > :hover {
-    transform: rotate(5deg);
-}
-
-/* Removing link styling from project links */
-.project > h2 > a {
-    text-decoration: none;
-    color: rgb(var(--primary-color));
-    margin-left: 1.5rem;
-    margin-top: .25rem;
-}
-
-/* Styling for hover text on project Repo link */
-.project > h2 > a:hover {
-    color: #03585e;
-}
-
-.project > h2 > a:hover:before {
-    content: "\1F517";
-    position: absolute;
-    transform: translate(-35px, -3px);
-    vertical-align: middle;
-}
-/* End Project Section */
-/* Styling for Color Theme Picker */
-#color-theme {
-    /* Only displays if JavaScript executes, otherwise is hidden */
-    /* display: none; */
-    position: absolute;
-    bottom: -37vh;
-    right: 3vw;
-}
-
-#color-theme > p {
-    color: var(--highlight-color);
-    text-shadow: 1px 1px 1px rgb(var(--primary-color));
-    margin-bottom: 2vh;
-}
-
-#color-theme > input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-}
-
-#color-theme > label {
-    border-radius: 50%;
-    padding: 8px 20px;
-    border: 3px solid var(--highlight-color);
-    cursor: pointer;
-}
-
-#color-theme > label:hover {
-    border-style: dotted;
-}
-
-#theme-light + label {
-    background-color: rgba(255, 255, 255, 0.322);
-}
-
-#theme-light:checked + label {
-    background-color: rgba(255, 255, 255, 0);
-    border-style: dashed;
-}
-
-#theme-dark + label {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-#theme-dark:checked + label {
-    background-color: black;
-    border-style: dashed;
-}
-
-/* Add right margin to all children other than the last one */
-#color-theme > label:not(:last-child){
-    margin-right: 1vw;
-}
-/* End Styling for Project Picker */
