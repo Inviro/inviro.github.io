@@ -6,6 +6,7 @@
     --highlight-color: rgba(255, 255, 255, .90);
     --menu-speed: .75s;
     --animation-time: .3s;
+
     scroll-behavior: smooth;
 }
 
@@ -420,6 +421,7 @@ header {
 /* End Project Section */
 /* Styling for Color Theme Picker */
 #color-theme {
+    /* display: none; */
     position: absolute;
     bottom: -37vh;
     right: 3vw;
@@ -433,14 +435,36 @@ header {
 
 #color-theme > input[type="radio"] {
     position: absolute;
-    /* opacity: 0; */
+    opacity: 0;
 }
 
 #color-theme > label {
     border-radius: 50%;
     padding: 8px 20px;
-    border: 3px solid black;
+    border: 3px solid var(--highlight-color);
+    cursor: pointer;
+}
+
+#color-theme > label:hover {
+    border-style: dotted;
+}
+
+#theme-light + label {
+    background-color: rgba(255, 255, 255, 0.322);
+}
+
+#theme-light:checked + label {
+    background-color: rgba(255, 255, 255, 0);
+    border-style: dashed;
+}
+
+#theme-dark + label {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#theme-dark:checked + label {
     background-color: black;
+    border-style: dashed;
 }
 
 /* Add right margin to all children other than the last one */

@@ -1,61 +1,25 @@
-// async function getRepoStats(repoUrl) {
-
-// }
-
-async function setRepoStats(title, projectID) {
-    const repo_url = "https://api.github.com/repos/inviro/" + title; // Repository location in Github API
-
-    // Using JavaScript fetch API
-    fetch(repo_url, {
-        method: 'GET',
+/**
+   * setRepoStats takes the ID of a project and the repository name and updates its information accordingly
+   * @param {String} repoName The name of the repository to search for
+   * @param {Number} projectID The ID of the project to be altered
+*/
+async function setRepoStats(repoName, projectID) {
+    const REPO_URL = "https://api.github.com/repos/inviro/" + repoName; // Repository location in Github API
+    // Using JavaScript fetch API to perform Github API calls for repository information
+    fetch(REPO_URL, {
+        method: 'GET', // GET request
         headers:{
-            "Accept"       : "application/json",
-            "Content-Type" : "application/json",
-            "User-Agent"   : "AbrahamChen.me"
+            "Accept"       : "application/json",    // Accept JSON Files
+            "Content-Type" : "application/json",    // JSON content
+            "User-Agent"   : "AbrahamChen.me"       // Website user agent
         }
-    }).then(response => response.json()).then(data => {
+    }).then(response => response.json()).then(data => { // Anonomous functions that convert the response into JSON format
+        // Updating the repository information from the information obtained from the GET request
         document.getElementById("watch-" + projectID).innerHTML = " " + data.watchers_count;
         document.getElementById("star-" + projectID).innerHTML = " " + data.stargazers_count;
         document.getElementById("fork-" + projectID).innerHTML = " " + data.forks_count;
         document.getElementById("caption-" + projectID).innerHTML = " " + data.description;
-        // console.log(data.stargazers_count);
-        // console.log(data.watchers_count);
-        // console.log(data.forks_count);
-        // console.log(data.description);
-        // console.log(data.language);
     })
-    // const repo_url = "https://github.com/inviro/" + title; // Repository location
-    // console.log(fetch(repo_url));
-    // fetch(repo_url).then(response => {
-    //     console.log(response.text);
-    // })
-    // console.log(my_url);
-
-    // Setting repo stats of the Github repository dynamically based on results from JavaScript
-    // result = "<a href=\"https://github.com/inviro/" + title + "/watchers\" aria-label = \"" + title + " Watchers\"><i class=\"fa fa-lg fa-eye\"> " + 10 + "</i></a>";
-    
-    
-    // const watchers;
-    // const stargazers;
-    // const branches;
-
-    // const html = fetch(url, {mode: 'cors'}).then(response => {
-    //     if(response.ok) {
-    //         return response.text();
-    //     }
-    // }).then(text => {
-    //     console.log(text)
-    // })
-
-    
-    // const html = (await (await fetch(url)).text()); // Gets the html of the url
-    // const repoDom = new DOMParser().parseFromString(html, 'text/html');
-    // console.log(repoDom.getElementsByClassName("social-count"));
-
-    // Getting repo stats of the Github repository
-    
-    // const repoDom = getDOMofURL(url);
-    // console.log(repoDom.getElementsByClassName("social-count"));
 }
 
 /**
@@ -65,10 +29,9 @@ async function setRepoStats(title, projectID) {
 async function loadProject(entryID) {
     let entry = document.getElementById(entryID);
     let title = entry.firstElementChild.innerHTML;
-    // let caption = entry.lastElementChild.innerHTML;
 
     let result;
-    const PROJECT_ID = entryID.split("-")[1]; // Gets project ID
+    const PROJECT_ID = entryID.split("-")[1]; // Gets project ID by getting the second split element
 
     // Setting title to a github link
     result = "<a href=" + "https://github.com/inviro/" + title + ">" + title + "</a>";
@@ -92,6 +55,12 @@ function loadProjects() {
     }
 }
 
-window.onload = function() {
-    loadProjects();
+function addThemePicker() {
+    
+}
+
+// Runs on window load
+window.onload = () => {
+    addThemePicker();
+    // loadProjects();
 }
