@@ -1,6 +1,6 @@
 /* Main style sheet */
 :root{
-    --primary-color: #03045E;
+    --primary-color: 3, 4, 94;
     --overlay-color:  rgba(245, 250, 255, 0.95);
     --header-color: #90E0EF;
     --highlight-color: rgba(255, 255, 255, .90);
@@ -96,14 +96,14 @@ header {
 
 /* Logo Styling Code Start */
 .logo-text {
-    color: black;
+    color: rgb(var(--primary-color));
     letter-spacing: 2px;
     font-size: 20px;
     min-width: 190px;
     text-align: center;
 }
 .logo-subtext {
-    color: darkslategray;
+    color: rgba(var(--primary-color), .8);
     font-size: 12px;
     text-align: center;
 }
@@ -132,7 +132,7 @@ header {
 }
 
 .nav-links a {
-    color: var(--primary-color);
+    color: rgb(var(--primary-color));
     letter-spacing: 2px;
     font-weight: bold;
     font-size: 20px;
@@ -191,7 +191,7 @@ header {
         width: 60px;
         height: 60px;
         padding: 1vh;
-        background-color: var(--primary-color);
+        background-color: rgb(var(--primary-color));
         box-shadow: 3px 3px 5px rgb(44, 44, 44);
         display: flex;
         align-items: center;
@@ -329,7 +329,7 @@ header {
     text-align: center;
     letter-spacing: .3rem;
     text-shadow: 2px 2px 2px var(--highlight-color);
-    color: var(--primary-color);
+    color: rgb(var(--primary-color));
 }
 
 #project-wrap {
@@ -353,7 +353,7 @@ header {
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     /* background-size: cover; */
-    box-shadow: 1px 2px 10px var(--primary-color);
+    box-shadow: 1px 2px 10px rgb(var(--primary-color));
     width: 75vw;
     grid-template-columns: 2fr 2fr 1fr;
 }
@@ -392,7 +392,7 @@ header {
 
 .repo-stats > a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: rgb(var(--primary-color));
 }
 
 .repo-stats > a > :hover {
@@ -402,7 +402,7 @@ header {
 /* Removing link styling from project links */
 .project > h2 > a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: rgb(var(--primary-color));
     margin-left: 1.5rem;
     margin-top: .25rem;
 }
@@ -421,6 +421,7 @@ header {
 /* End Project Section */
 /* Styling for Color Theme Picker */
 #color-theme {
+    /* Only displays if JavaScript executes, otherwise is hidden */
     /* display: none; */
     position: absolute;
     bottom: -37vh;
@@ -429,7 +430,7 @@ header {
 
 #color-theme > p {
     color: var(--highlight-color);
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 1px rgb(var(--primary-color));
     margin-bottom: 2vh;
 }
 
