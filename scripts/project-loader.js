@@ -1,8 +1,29 @@
-async function getRepoStats(repoUrl) {
+// async function getRepoStats(repoUrl) {
 
-}
+// }
 
 async function setRepoStats(title, projectID) {
+    const repo_url = "https://api.github.com/repos/inviro/" + title; // Repository location in Github API
+
+    // Using JavaScript fetch API
+    fetch(repo_url, {
+        method: 'GET',
+        headers:{
+            "Accept"       : "application/json",
+            "Content-Type" : "application/json",
+            "User-Agent"   : "AbrahamChen.me"
+        }
+    }).then(response => response.json()).then(data => {
+        document.getElementById("watch-" + projectID).innerHTML = " " + data.watchers_count;
+        document.getElementById("star-" + projectID).innerHTML = " " + data.stargazers_count;
+        document.getElementById("fork-" + projectID).innerHTML = " " + data.forks_count;
+        document.getElementById("caption-" + projectID).innerHTML = " " + data.description;
+        // console.log(data.stargazers_count);
+        // console.log(data.watchers_count);
+        // console.log(data.forks_count);
+        // console.log(data.description);
+        // console.log(data.language);
+    })
     // const repo_url = "https://github.com/inviro/" + title; // Repository location
     // console.log(fetch(repo_url));
     // fetch(repo_url).then(response => {
@@ -41,7 +62,7 @@ async function setRepoStats(title, projectID) {
    * loadProject takes the ID of a project and alters the project based upon information pulled using scripts
    * @param {String} entryID The ID of the entry to be altered
 */
-function loadProject(entryID) {
+async function loadProject(entryID) {
     let entry = document.getElementById(entryID);
     let title = entry.firstElementChild.innerHTML;
     // let caption = entry.lastElementChild.innerHTML;
@@ -56,9 +77,9 @@ function loadProject(entryID) {
     // Adding icons for the github stats that can be be updated with number later on
     result = "<a href=\"https://github.com/inviro/" + title + "/watchers\" aria-label = \"" + title + " Watchers\"><i class=\"fa fa-lg fa-eye\" id=\"watch-" + PROJECT_ID +"\"></i></a>";
     result += "<a href=\"https://github.com/inviro/" + title + "/stargazers\" aria-label = \"" + title + " Stargazers\"><i class=\"fa fa-lg fa-star\" id=\"star-" + PROJECT_ID +"\"></i></a>";
-    result += "<a href=\"https://github.com/inviro/" + title + "/network/members\" aria-label = \"" + title + " Branches\"><i class=\"fa fa-lg fa-code-branch\" id=\"branch-" + PROJECT_ID + "\"></i></a>";
+    result += "<a href=\"https://github.com/inviro/" + title + "/network/members\" aria-label = \"" + title + " Forks\"><i class=\"fa fa-lg fa-code-branch\" id=\"fork-" + PROJECT_ID + "\"></i></a>";
     document.getElementById("repo-stats-" + PROJECT_ID).innerHTML = result;
-    // setRepoStats(title, PROJECT_ID);
+    setRepoStats(title, PROJECT_ID);
 }
 
 /**
@@ -72,24 +93,5 @@ function loadProjects() {
 }
 
 window.onload = function() {
-    // Testing code start
-    // const url = "https://github.com/inviro/" + title; // Repository location
-
-    // const watchers = 4;
-    // const stargazers = 5;
-    // const branches = 6;
-
-    // console.log(watchers);
-    // fetch(url, {mode: 'cors'}).then(response => {
-    //     if(response.ok) {
-    //         console.log(response);
-    //     } else {
-    //         console.log(response);
-    //     }
-    // })
-
-
-    // Testing code end
-    // console.log("Hello world");
     loadProjects();
 }
