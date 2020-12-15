@@ -50,8 +50,8 @@ async function loadProject(entryID) {
    * loadProjects runs on window load and edits the HTML dom with the project information for each project
 */
 function loadProjects() {
-    let projectListLength = document.getElementsByClassName("project").length;
-    for(var i = 0; i < projectListLength; i++) {
+    const projectListLength = document.getElementsByClassName("project").length;
+    for(let i = 0; i < projectListLength; i++) {
         loadProject("project-" + i);
     }
 }
@@ -89,8 +89,19 @@ function addThemePicker() {
     document.getElementById('theme-dark').onclick = setThemeDark;
 }
 
+function addAnimations() {
+    let logo = document.getElementsByClassName('logo')[0];
+    logo.addEventListener("mouseover", () => {
+        logo.style.animation = "rotation 2s infinite linear"; // Adds rotation keyframe on mouseover
+    })
+    logo.addEventListener("mouseout", () => {
+        logo.style.animation = "none";
+    })
+}
+
 // Runs on window load
 window.onload = () => {
     addThemePicker();
+    addAnimations();
     loadProjects();
 }
