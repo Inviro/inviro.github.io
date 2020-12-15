@@ -100,6 +100,11 @@ header {
     font-size: 20px;
     min-width: 190px;
     text-align: center;
+    /* display: inline; */
+    /* align-content: center; */
+    /* position: absolute; */
+    /* background-color: white; */
+    /* margin: auto; */
 }
 .logo-subtext {
     color: rgba(var(--primary-color), .8);

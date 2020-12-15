@@ -61,7 +61,7 @@ function loadProjects() {
 */
 function setThemeLight() {
     let root = document.documentElement;
-    // Setting root css variables
+    // Setting root css variables to change color theme
     root.style.setProperty("--primary-color", "3, 4, 94")
     root.style.setProperty("--overlay-color", "rgba(245, 250, 255, 0.95)")
     root.style.setProperty("--header-color", "144, 224, 239")
@@ -73,7 +73,7 @@ function setThemeLight() {
 */
 function setThemeDark() {
     let root = document.documentElement;
-    // Setting root css variables
+    // Setting root css variables to change color theme
     root.style.setProperty("--primary-color", "255, 255, 255")
     root.style.setProperty("--overlay-color", "rgba(50, 50, 140, .5)")
     root.style.setProperty("--header-color", "3, 4, 94")
@@ -85,23 +85,59 @@ function setThemeDark() {
 */
 function addThemePicker() {
     document.getElementById('color-theme').style.display = 'inline'; // Changes display state from none to inline
+    // Adds listeners to radio buttons to set css variables onclick
     document.getElementById('theme-light').onclick = setThemeLight;
     document.getElementById('theme-dark').onclick = setThemeDark;
 }
 
+/**
+   * addAnimations adds animations using JavaScript and css to different inputs
+*/
 function addAnimations() {
-    let logo = document.getElementsByClassName('logo')[0];
+    // Adding animation to logo on mouseover and mouseout
+    let logo = document.getElementsByClassName('logo')[0]; // Gets logo by class name
     logo.addEventListener("mouseover", () => {
-        logo.style.animation = "rotation 2s infinite linear"; // Adds rotation keyframe on mouseover
+        logo.style.animation = "rotation 2s infinite linear"; // Adds infinate rotation keyframe on mouseover
     })
     logo.addEventListener("mouseout", () => {
-        logo.style.animation = "none";
+        logo.style.animation = "none"; // Removes rotation keyframe on mouseout
     })
+
+    let logoText = document.getElementsByClassName('logo-text')[0]; // Gets logo-subtext by class name
+    let logoSubtext = document.getElementsByClassName('logo-subtext')[0]; // Gets logo-subtext by class name
+    // addTextAnimation(logoText);
+    addTextAnimation(logoSubtext);
+}
+
+/**
+   * addTextAnimation adds animations to text using JavaScript
+   * @param {Element} ele The element which to animate
+*/
+function addTextAnimation(ele) {
+    if(ele.innerHTML.indexOf(" | ") > -1) { // If | exists in the element's innerHTML
+        let isPaused = false; // Pauses animation on hover
+        const wordArray = ele.innerHTML.split(" | "); // Splits html from a single line into several elements
+        let currIdx = 0; // Keeps track of the current index in wordArray
+        setInterval(() => {
+            if(!isPaused) {
+                ele.innerHTML = wordArray[currIdx];
+                currIdx = ((currIdx + 1) % wordArray.length);
+            }
+        }, 1500);
+
+        // Adds pause on mouseover and resumes on mouseout
+        ele.addEventListener("mouseover", () => {
+            isPaused = true;
+        })
+        ele.addEventListener("mouseout", () => {
+            isPaused = false;
+        })
+    }
 }
 
 // Runs on window load
 window.onload = () => {
     addThemePicker();
     addAnimations();
-    loadProjects();
+    // loadProjects();
 }
