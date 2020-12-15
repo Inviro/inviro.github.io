@@ -100,11 +100,6 @@ header {
     font-size: 20px;
     min-width: 190px;
     text-align: center;
-    /* display: inline; */
-    /* align-content: center; */
-    /* position: absolute; */
-    /* background-color: white; */
-    /* margin: auto; */
 }
 .logo-subtext {
     color: rgba(var(--primary-color), .8);
@@ -170,10 +165,7 @@ header {
 
 #project-wrap {
     display: grid;
-    /* column-gap: 1rem; */
     row-gap: 1.5rem;
-    /* margin: auto; */
-    /* margin-bottom: 20vh; */
     padding-bottom: 12vh;
 }
 
@@ -314,13 +306,16 @@ header {
 
 /* Start styling for animations */
 @keyframes rotation {
+    /* Make 360 degree rotation */
     from {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-      transform: rotate(359deg);
+        transform: rotate(359deg);
     }
-  }
+}
+
+
 /* End styling for animations */
 
 /* Tablet and Mobile Style */

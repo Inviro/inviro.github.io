@@ -118,12 +118,12 @@ function addTextAnimation(ele) {
         let isPaused = false; // Pauses animation on hover
         const wordArray = ele.innerHTML.split(" | "); // Splits html from a single line into several elements
         let currIdx = 0; // Keeps track of the current index in wordArray
-        setInterval(() => {
-            if(!isPaused) {
-                ele.innerHTML = wordArray[currIdx];
-                currIdx = ((currIdx + 1) % wordArray.length);
+        setInterval(() => { // Performs this on an interval
+            if(!isPaused) { // If isPaused is false, do the rest
+                ele.innerHTML = wordArray[currIdx]; // Sets element HTML to the currentIndex
+                currIdx = ((currIdx + 1) % wordArray.length); // Increments index, and ensures that it is within array bounds
             }
-        }, 1500);
+        }, 1800); // Repeat every 1800 miliseconds
 
         // Adds pause on mouseover and resumes on mouseout
         ele.addEventListener("mouseover", () => {
@@ -139,5 +139,5 @@ function addTextAnimation(ele) {
 window.onload = () => {
     addThemePicker();
     addAnimations();
-    // loadProjects();
+    loadProjects();
 }
