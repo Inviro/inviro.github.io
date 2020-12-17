@@ -479,6 +479,10 @@ header {
         /* background-color: red; */
         background-image: url('/images/bg_tablet.jpg');
     }
+
+    .project {
+        background-position: right -25px bottom -20px;
+    }
 }
 
 @media screen and (max-width: 500px){
@@ -487,6 +491,11 @@ header {
     }
 
     .project {
-        padding-bottom: 80px;
+        /* padding-bottom: 80px; */
+        background-position: right -50px bottom -20px;
     }
+/* 
+    .repo-stats {
+        margin-top: 20px;
+    } */
 }
