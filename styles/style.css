@@ -129,6 +129,8 @@ header {
     display: flex;
     padding-bottom: .2vw;
     background-color: var(--highlight-color);
+    border-radius: 7px;
+    box-shadow: 5px 8px rgba(var(--primary-color), 0.200);
 }
 
 .nav-links a {
@@ -156,7 +158,7 @@ header {
 #projects > h1 {
     padding: 2vh;
     padding-top: 5vh;
-    font-size: xx-large;
+    font-size: xxx-large;
     text-align: center;
     letter-spacing: .3rem;
     text-shadow: 2px 2px 2px var(--highlight-color);
@@ -190,6 +192,8 @@ header {
     width: minmax(40px, auto);
     margin-right: 5vw;
     text-align: left;
+    padding-left: .75rem;
+    padding-bottom: .25rem;
 }
 
 .subtitle {
@@ -224,6 +228,10 @@ header {
     transform: rotate(5deg);
 }
 
+.project > h2 {
+    font-size: xx-large;
+}
+
 /* Removing link styling from project links */
 .project > h2 > a {
     text-decoration: none;
@@ -244,7 +252,7 @@ header {
 .project > h2 > a:hover:before {
     content: "\1F517";
     position: absolute;
-    transform: translate(-35px, -3px);
+    transform: translate(-50px, -3px);
     vertical-align: middle;
 }
 /* End Project Section */
@@ -491,11 +499,6 @@ header {
     }
 
     .project {
-        /* padding-bottom: 80px; */
         background-position: right -50px bottom -20px;
     }
-/* 
-    .repo-stats {
-        margin-top: 20px;
-    } */
 }
