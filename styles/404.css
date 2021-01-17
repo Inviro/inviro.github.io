@@ -1,0 +1,48 @@
+/* 404 page style sheet */
+:root{
+    --primary-color: 3, 4, 94;
+    --overlay-color:  rgba(245, 250, 255, 0.95);
+    --header-color: 144, 224, 239;
+    --highlight-color: rgba(255, 255, 255, .90);
+    --menu-speed: .75s;
+    --animation-time: .3s;
+    --animation-style: ease;
+
+    scroll-behavior: smooth;
+}
+
+/* Start of boilerplate code */
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    height: 100%;
+    overflow: auto;
+}
+
+body {
+    font-family: 'Vollkorn', serif;
+}
+/* End of boilerplate */
+
+body {
+    background-color: rgb(var(--header-color));
+}
+
+.content-wrapper {
+    margin-top: 40vh;
+    display: grid;
+    text-align: center;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+p > a {
+    text-decoration: none;
+    color: blue;
+}
