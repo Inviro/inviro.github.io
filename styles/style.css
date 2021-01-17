@@ -67,7 +67,7 @@ footer > div {
 
 /* Start Main Section */
 #bg-image-wrap {
-    background-image: url('/images/bg.jpg');;
+    background-image: url('/images/bg.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
