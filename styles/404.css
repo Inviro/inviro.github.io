@@ -36,13 +36,26 @@ body {
     margin-top: 40vh;
     display: grid;
     text-align: center;
+    grid-template-columns: 1fr;
 }
 
 h1 {
     font-size: 70px;
 }
 
+h2 {
+    font-size: 30px;
+}
+
 p > a {
     text-decoration: none;
     color: blue;
+}
+
+.small-text {
+    margin-top: 2vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1vh;
+    font-size: large;
 }
