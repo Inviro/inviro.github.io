@@ -43,7 +43,6 @@ body {
     grid-column: 2;
     background-color: rgba(var(--header-color), 0.30);
     padding: 2em;
-    /* box-shadow: 2px solid black; */
 }
 
 h1 {
