@@ -135,9 +135,14 @@ function addTextAnimation(ele) {
     }
 }
 
+function createCarosel() {
+    
+}
+
 // Runs on window load
 window.onload = () => {
     addThemePicker();
     addAnimations();
     loadProjects();
+    createCarosel();
 }
