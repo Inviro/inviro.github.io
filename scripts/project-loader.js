@@ -135,8 +135,12 @@ function addTextAnimation(ele) {
     }
 }
 
-function createCarosel() {
-    
+async function updateHitCount() {
+    const a = "aHR0cHM6Ly91cy1jZW50cmFsMS1hYnJhaGFtY2hlbndlYi5jbG91ZGZ1bmN0aW9ucy5uZXQvd2Vic2l0ZUhpdHMg";
+    await fetch(atob(a))
+        .then((resp) => resp.json()).then((jsonResp) => {
+            console.log(jsonResp);
+    });
 }
 
 // Runs on window load
@@ -144,5 +148,5 @@ window.onload = () => {
     addThemePicker();
     addAnimations();
     loadProjects();
-    createCarosel();
+    updateHitCount();
 }
