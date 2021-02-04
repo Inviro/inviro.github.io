@@ -64,7 +64,7 @@ function setThemeLight() {
     // Setting root css variables to change color theme
     root.style.setProperty("--primary-color", "3, 4, 94")
     root.style.setProperty("--overlay-color", "rgba(245, 250, 255, 0.95)")
-    root.style.setProperty("--header-color", "144, 224, 239")
+    root.style.setProperty("--header-color", "33, 158, 188")
     root.style.setProperty("--highlight-color", "rgba(255, 255, 255, .90)")
 }
 
@@ -77,7 +77,7 @@ function setThemeDark() {
     root.style.setProperty("--primary-color", "255, 255, 255")
     root.style.setProperty("--overlay-color", "rgba(50, 50, 140, .5)")
     root.style.setProperty("--header-color", "3, 4, 94")
-    root.style.setProperty("--highlight-color", "#90E0EF")
+    root.style.setProperty("--highlight-color", "#219EBC")
 }
 
 /**
@@ -102,7 +102,6 @@ function addAnimations() {
     logo.addEventListener("mouseout", () => {
         logo.style.animation = "none"; // Removes rotation keyframe on mouseout
     })
-
     // let logoText = document.getElementsByClassName('logo-text')[0]; // Gets logo-subtext by class name
     // let logoSubtext = document.getElementsByClassName('logo-subtext')[0]; // Gets logo-subtext by class name
     // addTextAnimation(logoText);
@@ -147,7 +146,7 @@ async function updateHitCount() {
 // Runs on window load
 window.onload = () => {
     addThemePicker();
+    updateHitCount();
     addAnimations();
     loadProjects();
-    updateHitCount();
 }
