@@ -59,7 +59,7 @@ async function loadProjects() {
 /**
    * setThemeLight sets the current theme to light theme
 */
-function setThemeLight() {
+async function setThemeLight() {
     let root = document.documentElement;
     // Setting root css variables to change color theme
     root.style.setProperty("--primary-color", "3, 4, 94")
@@ -71,7 +71,7 @@ function setThemeLight() {
 /**
    * setThemeDark sets the current theme to dark theme
 */
-function setThemeDark() {
+async function setThemeDark() {
     let root = document.documentElement;
     // Setting root css variables to change color theme
     root.style.setProperty("--primary-color", "255, 255, 255")
@@ -143,13 +143,13 @@ async function updateHitCount() {
     let totalVisits = document.getElementById('total-visits');
     await fetch(atob(a))
         .then((resp) => resp.json()).then((jsonResp) => {
-            weeklyVisits.innerHTML = `<strong>Visits this week:</strong> ${jsonResp["weeklyHits"]}`;
-            totalVisits.innerHTML = `<strong>Total visits:</strong> ${jsonResp["totalHits"]}`;
+            weeklyVisits.innerHTML = `<strong>Visits this week:</strong><p>${jsonResp["weeklyHits"]}</p>`;
+            totalVisits.innerHTML = `<strong>Total visits:</strong><p>${jsonResp["totalHits"]}</p>`;
     });
 }
 
 // Runs on window load
-window.onload = async () => {
+window.onload = () => {
     addThemePicker();
     updateHitCount();
     addAnimations();
