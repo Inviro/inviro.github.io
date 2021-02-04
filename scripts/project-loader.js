@@ -103,10 +103,10 @@ function addAnimations() {
         logo.style.animation = "none"; // Removes rotation keyframe on mouseout
     })
 
-    let logoText = document.getElementsByClassName('logo-text')[0]; // Gets logo-subtext by class name
-    let logoSubtext = document.getElementsByClassName('logo-subtext')[0]; // Gets logo-subtext by class name
+    // let logoText = document.getElementsByClassName('logo-text')[0]; // Gets logo-subtext by class name
+    // let logoSubtext = document.getElementsByClassName('logo-subtext')[0]; // Gets logo-subtext by class name
     // addTextAnimation(logoText);
-    addTextAnimation(logoSubtext);
+    // addTextAnimation(logoSubtext);
 }
 
 /**
@@ -137,9 +137,10 @@ function addTextAnimation(ele) {
 
 async function updateHitCount() {
     const a = "aHR0cHM6Ly91cy1jZW50cmFsMS1hYnJhaGFtY2hlbndlYi5jbG91ZGZ1bmN0aW9ucy5uZXQvd2Vic2l0ZUhpdHMg";
+    let logoSubtext = document.getElementsByClassName('logo-subtext')[0]; // Gets logo-subtext by class name
     await fetch(atob(a))
         .then((resp) => resp.json()).then((jsonResp) => {
-            console.log(jsonResp);
+            logoSubtext.innerHTML = `Visits this week: ${jsonResp["weeklyHits"]} | Total Visits: ${jsonResp["totalHits"]}`;
     });
 }
 
