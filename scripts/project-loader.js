@@ -49,7 +49,7 @@ async function loadProject(entryID) {
 /**
    * loadProjects runs on window load and edits the HTML dom with the project information for each project
 */
-function loadProjects() {
+async function loadProjects() {
     const projectListLength = document.getElementsByClassName("project").length;
     for(let i = 0; i < projectListLength; i++) {
         loadProject("project-" + i);
@@ -83,7 +83,7 @@ function setThemeDark() {
 /**
    * addThemePicker displays the theme picker, and attaches listeners to the corresponding radio buttons
 */
-function addThemePicker() {
+async function addThemePicker() {
     document.getElementById('color-theme').style.display = 'inline'; // Changes display state from none to inline
     // Adds listeners to radio buttons to set css variables onclick
     document.getElementById('theme-light').onclick = setThemeLight;
@@ -93,7 +93,7 @@ function addThemePicker() {
 /**
    * addAnimations adds animations using JavaScript and css to different inputs
 */
-function addAnimations() {
+async function addAnimations() {
     // Adding animation to logo on mouseover and mouseout
     let logo = document.getElementsByClassName('logo')[0]; // Gets logo by class name
     logo.addEventListener("mouseover", () => {
@@ -112,7 +112,7 @@ function addAnimations() {
    * addTextAnimation adds animations to text using JavaScript
    * @param {Element} ele The element which to animate
 */
-function addTextAnimation(ele) {
+async function addTextAnimation(ele) {
     if(ele.innerHTML.indexOf(" | ") > -1) { // If | exists in the element's innerHTML
         let isPaused = false; // Pauses animation on hover
         const wordArray = ele.innerHTML.split(" | "); // Splits html from a single line into several elements
@@ -134,17 +134,22 @@ function addTextAnimation(ele) {
     }
 }
 
+/**
+   * updateHitCount updates the count of weekly and total visits to my website
+*/
 async function updateHitCount() {
     const a = "aHR0cHM6Ly91cy1jZW50cmFsMS1hYnJhaGFtY2hlbndlYi5jbG91ZGZ1bmN0aW9ucy5uZXQvd2Vic2l0ZUhpdHMg";
-    let logoSubtext = document.getElementsByClassName('logo-subtext')[0]; // Gets logo-subtext by class name
+    let weeklyVisits = document.getElementById('weekly-visits');
+    let totalVisits = document.getElementById('total-visits');
     await fetch(atob(a))
         .then((resp) => resp.json()).then((jsonResp) => {
-            logoSubtext.innerHTML = `Visits this week: ${jsonResp["weeklyHits"]} | Total Visits: ${jsonResp["totalHits"]}`;
+            weeklyVisits.innerHTML = `<strong>Visits this week:</strong> ${jsonResp["weeklyHits"]}`;
+            totalVisits.innerHTML = `<strong>Total visits:</strong> ${jsonResp["totalHits"]}`;
     });
 }
 
 // Runs on window load
-window.onload = () => {
+window.onload = async () => {
     addThemePicker();
     updateHitCount();
     addAnimations();

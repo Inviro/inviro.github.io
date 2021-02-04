@@ -2,7 +2,6 @@
 :root{
     --primary-color: 3, 4, 94;
     --overlay-color:  rgba(245, 250, 255, 0.95);
-    /* --header-color: 144, 224, 239; */
     --header-color: 33, 158, 188;
     --highlight-color: rgba(255, 255, 255, .90);
     --menu-speed: .75s;
@@ -107,7 +106,7 @@ header {
     min-width: 190px;
     text-align: center;
 }
-.logo-subtext {
+#weekly-visits, #total-visits {
     color: rgba(var(--primary-color), .8);
     font-size: 12px;
     text-align: center;
@@ -157,7 +156,6 @@ header {
 
 } */
 /* Nav Link Animation End */
-
 /* End Menu Section */
 
 /* Start Project Section */
@@ -330,9 +328,20 @@ header {
         transform: rotate(359deg);
     }
 }
-
 /* End styling for animations */
-/* Tablet and Mobile Style */
+
+/* Media Queries */
+@media screen and (max-width: 500px){
+    #bg-image-wrap {
+        background-image: url('/images/bg_mobile.jpg');
+    }
+
+    .project {
+        background-position: right -25px bottom -20px;
+    }
+}
+
+/* Tablet Style */
 @media screen and (max-width: 800px){
     .nav-links {
         display: inline;
@@ -488,23 +497,12 @@ header {
         text-decoration: underline;
     }
     /* Menu Code end */
-}
-@media screen and (max-width: 800px) and (min-width: 501px) {
+    
     #bg-image-wrap {
         background-image: url('/images/bg_tablet.jpg');
     }
 
-    .project {
-        background-position: right -25px bottom -20px;
-    }
-}
-
-@media screen and (max-width: 500px){
-    #bg-image-wrap {
-        background-image: url('/images/bg_mobile.jpg');
-    }
-
-    .project {
-        background-position: right -50px bottom -20px;
-    }
+    /* .project {
+        background-position: right -200px bottom -20px;
+    } */
 }
