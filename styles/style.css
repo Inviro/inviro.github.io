@@ -106,16 +106,16 @@ header {
     min-width: 190px;
     text-align: center;
 }
-#weekly-visits, #total-visits {
+#visits-display {
     color: rgba(var(--primary-color), .8);
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
 }
-#weekly-visits > strong, #total-visits > strong {
+#visits-display > strong {
     font-weight: 600;
 }
-#weekly-visits > p, #total-visits > p {
-    font-size: 10px;
+#visits-display > p {
+    font-size: 12px;
 }
 .logo {
     display: block;
