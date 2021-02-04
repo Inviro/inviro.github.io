@@ -102,10 +102,6 @@ async function addAnimations() {
     logo.addEventListener("mouseout", () => {
         logo.style.animation = "none"; // Removes rotation keyframe on mouseout
     })
-    // let logoText = document.getElementsByClassName('logo-text')[0]; // Gets logo-subtext by class name
-    // let logoSubtext = document.getElementsByClassName('logo-subtext')[0]; // Gets logo-subtext by class name
-    // addTextAnimation(logoText);
-    // addTextAnimation(logoSubtext);
 }
 
 /**
@@ -122,7 +118,7 @@ async function addTextAnimation(ele) {
                 ele.innerHTML = wordArray[currIdx]; // Sets element HTML to the currentIndex
                 currIdx = ((currIdx + 1) % wordArray.length); // Increments index, and ensures that it is within array bounds
             }
-        }, 2300); // Repeat every x miliseconds
+        }, 2200); // Repeat every x miliseconds
 
         // Adds pause on mouseover and resumes on mouseout
         ele.addEventListener("mouseover", () => {
@@ -139,8 +135,6 @@ async function addTextAnimation(ele) {
 */
 async function updateHitCount() {
     const a = "aHR0cHM6Ly91cy1jZW50cmFsMS1hYnJhaGFtY2hlbndlYi5jbG91ZGZ1bmN0aW9ucy5uZXQvd2Vic2l0ZUhpdHMg";
-    // let weeklyVisits = document.getElementById('weekly-visits');
-    // let totalVisits = document.getElementById('total-visits');
     let visitsDisplay = document.getElementById('visits-display');
     await fetch(atob(a))
         .then((resp) => resp.json()).then((jsonResp) => {
@@ -148,8 +142,6 @@ async function updateHitCount() {
             html += `|<strong>Total visits:  </strong><p>${parseInt(jsonResp["totalHits"]).toLocaleString()}</p>`;
             visitsDisplay.innerHTML = html;
             addTextAnimation(visitsDisplay);
-            // weeklyVisits.innerHTML = `<strong>Visits this week:  </strong><p>${parseInt(jsonResp["weeklyHits"]).toLocaleString()}</p>`;
-            // totalVisits.innerHTML = `<strong>Total visits:  </strong><p>${parseInt(jsonResp["totalHits"]).toLocaleString()}</p>`;
     });
 }
 
