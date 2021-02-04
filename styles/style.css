@@ -111,6 +111,12 @@ header {
     font-size: 12px;
     text-align: center;
 }
+#weekly-visits > strong, #total-visits > strong {
+    font-weight: 600;
+}
+#weekly-visits > p, #total-visits > p {
+    font-size: 10px;
+}
 .logo {
     display: block;
     margin: auto;
@@ -330,17 +336,6 @@ header {
 }
 /* End styling for animations */
 
-/* Media Queries */
-@media screen and (max-width: 500px){
-    #bg-image-wrap {
-        background-image: url('/images/bg_mobile.jpg');
-    }
-
-    .project {
-        background-position: right -25px bottom -20px;
-    }
-}
-
 /* Tablet Style */
 @media screen and (max-width: 800px){
     .nav-links {
@@ -502,7 +497,18 @@ header {
         background-image: url('/images/bg_tablet.jpg');
     }
 
-    /* .project {
-        background-position: right -200px bottom -20px;
-    } */
+    .project {
+        background-position: right -25px bottom -20px;
+    }
+}
+
+/* Media Queries */
+@media screen and (max-width: 500px){
+    #bg-image-wrap {
+        background-image: url('/images/bg_mobile.jpg');
+    }
+
+    .project {
+        background-position: right -65px bottom -20px;
+    }
 }
