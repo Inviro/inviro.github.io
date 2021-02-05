@@ -139,7 +139,7 @@ async function updateHitCount() {
     await fetch(atob(a))
         .then((resp) => resp.json()).then((jsonResp) => {
             var html = `<strong>Visits this week:  </strong><p>${parseInt(jsonResp["weeklyHits"]).toLocaleString()}</p>`;
-            html += `|<strong>Total visits:  </strong><p>${parseInt(jsonResp["totalHits"]).toLocaleString()}</p>`;
+            html += ` | <strong>Total visits:  </strong><p>${parseInt(jsonResp["totalHits"]).toLocaleString()}</p>`;
             visitsDisplay.innerHTML = html;
             addTextAnimation(visitsDisplay);
     });
