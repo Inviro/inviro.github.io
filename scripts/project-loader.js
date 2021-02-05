@@ -32,11 +32,10 @@ function loadProject(entryID) {
   const entry = document.getElementById(entryID);
   const title = entry.firstElementChild.innerHTML;
 
-  let result;
   const PROJECT_ID = entryID.split('-')[1]; // Gets project ID by getting the second split element
 
   // Setting title to a github link
-  // result = `${'<a href=' + 'https://github.com/inviro/'}${title}>${title}</a>`;
+  let result = `<a href = 'https://github.com/inviro/${title}'>${title}</a>`;
   entry.firstElementChild.innerHTML = result;
 
   // Adding icons for the github stats that can be be updated dynamically with numbers later on
@@ -52,9 +51,11 @@ function loadProject(entryID) {
    * loadProjects runs on window load and updates the HTML dom with project information
 */
 function loadProjects() {
-  document.getElementsByClassName('project').array.forEach((project) => {
-    loadProject(project);
-  });
+  const projects = document.getElementsByClassName('project');
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < projects.length; i++) {
+    loadProject(`project-${i}`);
+  }
 }
 
 /**
