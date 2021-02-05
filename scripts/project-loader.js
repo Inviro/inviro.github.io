@@ -107,18 +107,19 @@ async function addAnimations() {
 /**
    * addTextAnimation adds animations to text using JavaScript
    * @param {Element} ele The element which to animate
+   * @param {String} text A string seperated by " | " of text to animate over
 */
-async function addTextAnimation(ele) {
-    if(ele.innerHTML.indexOf(" | ") > -1) { // If | exists in the element's innerHTML
+async function addTextAnimation(ele, text) {
+    if(text.indexOf(" | ") > -1) { // If | exists in the element's innerHTML
         let isPaused = false; // Pauses animation on hover
-        const wordArray = ele.innerHTML.split(" | "); // Splits html from a single line into several elements
+        const wordArray = text.split(" | "); // Splits html from a single line into several elements
         let currIdx = 0; // Keeps track of the current index in wordArray
         setInterval(() => { // Performs this on an interval
             if(!isPaused) { // If isPaused is false, do the rest
                 ele.innerHTML = wordArray[currIdx]; // Sets element HTML to the currentIndex
                 currIdx = ((currIdx + 1) % wordArray.length); // Increments index, and ensures that it is within array bounds
             }
-        }, 2200); // Repeat every x miliseconds
+        }, 4500); // Repeat every x miliseconds
 
         // Adds pause on mouseover and resumes on mouseout
         ele.addEventListener("mouseover", () => {
@@ -138,10 +139,9 @@ async function updateHitCount() {
     let visitsDisplay = document.getElementById('visits-display');
     await fetch(atob(a))
         .then((resp) => resp.json()).then((jsonResp) => {
-            var html = `<strong>Visits this week:  </strong><p>${parseInt(jsonResp["weeklyHits"]).toLocaleString()}</p>`;
-            html += ` | <strong>Total visits:  </strong><p>${parseInt(jsonResp["totalHits"]).toLocaleString()}</p>`;
-            visitsDisplay.innerHTML = html;
-            addTextAnimation(visitsDisplay);
+            var htmlString = `<strong>Visits this week:  </strong><p>${parseInt(jsonResp["weeklyHits"]).toLocaleString()}</p>`;
+            htmlString += ` | <strong>Total visits:  </strong><p>${parseInt(jsonResp["totalHits"]).toLocaleString()}</p>`;
+            addTextAnimation(visitsDisplay, htmlString);
     });
 }
 
