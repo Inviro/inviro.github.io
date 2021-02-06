@@ -144,16 +144,16 @@ function updateHitCount() {
   fetch(atob(a))
     .then((resp) => resp.json())
     .then((jsonResp) => {
-      let htmlString = `<strong>Visits this week:  </strong><p>${parseInt(jsonResp.weeklyHits, 10).toLocaleString()}</p>`;
-      htmlString += ` | <strong>Total visits:  </strong><p>${parseInt(jsonResp.totalHits, 10).toLocaleString()}</p>`;
-      addTextAnimation(visitsDisplay, htmlString);
+      let htmlString = `<p><strong>Weekly visits:  </strong>${parseInt(jsonResp.weeklyHits, 10).toLocaleString()}`;
+      htmlString += `<br><strong>Total visits:  </strong>${parseInt(jsonResp.totalHits, 10).toLocaleString()}</p>`;
+      visitsDisplay.innerHTML = htmlString;
     });
 }
 
 // Runs on window load
 window.onload = () => {
-  addThemePicker();
   updateHitCount();
+  addThemePicker();
   addAnimations();
   loadProjects();
 };

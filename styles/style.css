@@ -111,11 +111,12 @@ header {
     font-size: 14px;
     text-align: center;
 }
-#visits-display > strong {
-    font-weight: 600;
-}
 #visits-display > p {
     font-size: 12px;
+}
+#visits-display > p > strong {
+    font-weight: 600;
+    font-size: 10px;
 }
 .logo {
     display: block;
