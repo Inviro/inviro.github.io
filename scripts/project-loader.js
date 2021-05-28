@@ -111,29 +111,29 @@ function addAnimations() {
    * @param {HTMLElement} ele The element which to animate
    * @param {String} text A string seperated by " | " of text to animate over
 */
-function addTextAnimation(ele, text) {
-  if (text.indexOf(' | ') > -1) { // If | exists in the element's innerHTML
-    let isPaused = false; // Pauses animation on hover
-    const wordArray = text.split(' | '); // Splits html from a single line into several elements
-    let currIdx = 0; // Keeps track of the current index in wordArray
-    setInterval(() => { // Performs this on an interval
-      if (!isPaused) { // If isPaused is false, do the rest
-        // eslint-disable-next-line no-param-reassign
-        ele.innerHTML = wordArray[currIdx]; // Sets element HTML to the currentIndex
-        // Increments index, and ensures that it is within array bounds
-        currIdx = ((currIdx + 1) % wordArray.length);
-      }
-    }, 4500); // Repeat every x miliseconds
+// function addTextAnimation(ele, text) {
+//   if (text.indexOf(' | ') > -1) { // If | exists in the element's innerHTML
+//     let isPaused = false; // Pauses animation on hover
+//     const wordArray = text.split(' | '); // Splits html from a single line into several elements
+//     let currIdx = 0; // Keeps track of the current index in wordArray
+//     setInterval(() => { // Performs this on an interval
+//       if (!isPaused) { // If isPaused is false, do the rest
+//         // eslint-disable-next-line no-param-reassign
+//         ele.innerHTML = wordArray[currIdx]; // Sets element HTML to the currentIndex
+//         // Increments index, and ensures that it is within array bounds
+//         currIdx = ((currIdx + 1) % wordArray.length);
+//       }
+//     }, 4500); // Repeat every x miliseconds
 
-    // Adds pause on mouseover and resumes on mouseout
-    ele.addEventListener('mouseover', () => {
-      isPaused = true;
-    });
-    ele.addEventListener('mouseout', () => {
-      isPaused = false;
-    });
-  }
-}
+//     // Adds pause on mouseover and resumes on mouseout
+//     ele.addEventListener('mouseover', () => {
+//       isPaused = true;
+//     });
+//     ele.addEventListener('mouseout', () => {
+//       isPaused = false;
+//     });
+//   }
+// }
 
 /**
    * updateHitCount updates the count of weekly and total visits to my website
