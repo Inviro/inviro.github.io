@@ -15,15 +15,18 @@ function App() {
         {/* Site Metadata End */}
         <title>Abraham Chen </title>
       </Helmet>
+      <header>
+        <img src="NameLogo.svg" alt="Abraham Chen text logo" width="375px" id="name-logo" />
+      </header>
       <div id='home'>
         <img 
         src='portrait.png' 
         alt='Abraham, wearing glasses and a dark colored t-shirt smiles against a plain white background.' 
         className='portrait'/>
         <h1>
-          <span>Hello! </span>
-          <span>I'm </span>
-          <span>Abraham</span>
+          <span>Glad</span>
+          <span>you're</span>
+          <span>here!</span>
         </h1>
       </div>
     </>
