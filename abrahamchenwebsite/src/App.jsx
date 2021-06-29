@@ -16,18 +16,46 @@ function App() {
         <title>Abraham Chen </title>
       </Helmet>
       <header>
-        <img src="NameLogo.svg" alt="Abraham Chen text logo" width="375px" id="name-logo" />
+        <a href="#home">
+          <img src="NameLogo.svg" alt="Website home" width="375px" id="name-logo" />
+        </a>
       </header>
-      <div id='home'>
-        <img 
-        src='portrait.png' 
-        alt='Abraham, wearing glasses and a dark colored t-shirt smiles against a plain white background.' 
-        className='portrait'/>
-        <h1>
-          <span>Glad</span>
-          <span>you're</span>
-          <span>here!</span>
-        </h1>
+      <nav class="menu-wrap">
+        <input type="checkbox" class="toggler" aria-label = "menu" />
+        <div class="burger"><div></div></div>
+        <div class="menu">
+          <div>
+            <div>
+              <ul class="nav-links">
+                <li><a class = "nav-link" href="#home">Home</a></li>
+                <li><a class = "nav-link" href="#projects">Projects</a></li>
+                <li><a class = "nav-link" href="#contact">Contact</a></li>
+                <li><a class = "nav-link" href="/documents/ResumeAbrahamChen.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      {/* <nav>
+        <ul class="nav-links">
+          <li><a class = "nav-link" href="#home">Home</a></li>
+          <li><a class = "nav-link" href="#about">About</a></li>
+          <li><a class = "nav-link" href="#projects">Projects</a></li>
+          <li><a class = "nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav> */}
+      <div className="pages">
+        <div id='home'>
+          <img 
+          src='portrait.png' 
+          alt='Abraham, wearing glasses and a dark colored t-shirt smiles against a plain white background.' 
+          className='portrait'/>
+          <h1>
+            <div>Glad</div>
+            <div>you're</div>
+            <div>here!</div>
+          </h1>
+        </div>
       </div>
     </>
   );

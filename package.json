@@ -1,0 +1,28 @@
+{
+  "name": "abrahamchen.me",
+  "version": "1.0.0",
+  "description": "[![Website AbrahamChen.me](https://img.shields.io/website-up-down-green-red/https/AbrahamChen.me.svg)](https://AbrahamChen.me/)\r ## Intro\r Personal website of Abraham Chen built using HTML5, CSS3, and Vanilla JavaScript.",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "node-fetch": "^2.6.1",
+    "normalize.css": "^8.0.1",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "cd abrahamchenwebsite && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inviro/inviro.github.io.git"
+  },
+  "author": "Abraham Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Inviro/inviro.github.io/issues"
+  },
+  "homepage": "https://github.com/Inviro/inviro.github.io#readme"
+}

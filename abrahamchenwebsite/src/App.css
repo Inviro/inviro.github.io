@@ -14,7 +14,7 @@ html {
   border-radius: 25%;
 }
 
-header > img {
+#name-logo {
   margin-left: 5px;
 }
 
@@ -22,7 +22,7 @@ header > img {
 #home {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: rebeccapurple;
+  background-color: var(--tan);
   gap: 20px;
   padding: 20px;
 }
@@ -41,13 +41,14 @@ header > img {
   grid-column: 2;
 }
 
-#home > h1 > span {
-  display: block;
+#home > h1 > div {
+  margin-left: 18px;
 }
 /* End home page styling */
 
 /* Tablet and Desktop View */
 @media only screen and (min-width: 600px) {
+  /* Start home page styling */
   #home {
     grid-template-columns: 1fr 1fr;
   }
@@ -58,7 +59,41 @@ header > img {
 
   #home > img {
     margin-right: 50px;
-    justify-self: end;
   }
+  /* End home page styling */
 }
-/* End home page styling */
+
+/* Desktop specific styling */
+@media screen and (min-width: 1200px) {
+  /* Start nav link styling */
+  .nav-links {
+    z-index: 2;
+    position: fixed;
+    right: 5vw;
+    top: 1vh;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+    display: flex;
+    padding-bottom: .2vw;
+    /* background-color: var(--highlight-color); */
+    border-radius: 7px;
+    /* box-shadow: 5px 8px rgba(var(--primary-color), 0.200); */
+  }
+
+  .nav-links a {
+    color: black;
+    /* color: rgb(var(--primary-color)); */
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 2vh;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  /* End nav link styling */
+}
