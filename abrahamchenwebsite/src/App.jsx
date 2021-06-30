@@ -36,15 +36,7 @@ function App() {
           </div>
         </div>
       </nav>
-      {/* <nav>
-        <ul class="nav-links">
-          <li><a class = "nav-link" href="#home">Home</a></li>
-          <li><a class = "nav-link" href="#about">About</a></li>
-          <li><a class = "nav-link" href="#projects">Projects</a></li>
-          <li><a class = "nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </nav> */}
-      <div className="pages">
+      <div id="content-wrap">
         <div id='home'>
           <img 
           src='portrait.png' 

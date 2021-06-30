@@ -241,8 +241,25 @@ header {
   /* End home page styling */
 }
 
+/* Desktop styling */
+@media screen and (min-width: 850px) {
+  /* Hamburger menu resets */
+  .menu-wrap .burger, 
+  .menu-wrap .toggler {
+    display: none;
+  }
+
+  .menu-wrap .menu {
+    /* visibility: visible; */
+  }
+}
+
 /* Desktop specific styling */
 @media screen and (min-width: 1200px) {
+  /* .menu-wrap .menu {
+    visibility: hidden;
+  } */
+
   /* Start nav link styling */
   /* .nav-links {
     z-index: 2;
