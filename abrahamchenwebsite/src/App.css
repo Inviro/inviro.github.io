@@ -141,13 +141,17 @@ header {
 
 /* --- Start Animations --- */
 /* Hover animation for unchecked state */
+.menu-wrap .toggler:not(:checked):hover + .burger {
+  filter: brightness(90%);
+  border-radius: 10px;
+}
 .menu-wrap .toggler:not(:checked):hover + .burger > div {
-  transform: translateX(1px);
+  transform: translateX(2px);
 }
 
 .menu-wrap .toggler:not(:checked):hover + .burger > div:before,
 .menu-wrap .toggler:not(:checked):hover + .burger > div:after {
-  transform: translateX(-1px);
+  transform: translateX(-2px);
 }
 
 /* Toggler animation */
@@ -172,12 +176,6 @@ header {
 .menu-wrap .toggler:checked ~ .menu {
   visibility: visible;
 }
-  
-.menu-wrap .toggler:checked ~ .menu > div {
-    transform: scale(1);
-    transition-duration: .75s;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
 
 .menu-wrap .toggler:checked ~ .menu > div > div {
     opacity: 1;
@@ -199,20 +197,13 @@ header {
 
 .menu-wrap .menu > div {
     background: var(--overlay-color);
-    width: 200vh;
-    height: 200vh;
+    width: 100vh;
+    height: 100vh;
     display: flex;
     flex: none;
     align-items: center;
     justify-content: center;
-    transform: scale(0);
-}
-
-.menu-wrap .menu > div > div {
-    text-align: center;
-    max-width: 90vw;
-    max-height: 100vh;
-    opacity: 0;
+    width: 100%;
 }
 
 .menu-wrap .menu > div > div > ul > li {
@@ -253,7 +244,7 @@ header {
 /* Desktop specific styling */
 @media screen and (min-width: 1200px) {
   /* Start nav link styling */
-  .nav-links {
+  /* .nav-links {
     z-index: 2;
     position: fixed;
     right: 5vw;
@@ -268,7 +259,6 @@ header {
 
   .nav-links a {
     color: black;
-    /* color: rgb(var(--primary-color)); */
     letter-spacing: 2px;
     font-weight: bold;
     font-size: 20px;
@@ -277,6 +267,6 @@ header {
 
   .nav-links a:hover {
     text-decoration: underline;
-  }
+  } */
   /* End nav link styling */
 }
