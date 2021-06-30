@@ -17,7 +17,7 @@ function App() {
       </Helmet>
       <header>
         <a href="#home">
-          <img src="NameLogo.svg" alt="Website home" width="375px" id="name-logo" />
+          <img src="NameLogo.svg" alt="Website home" id="name-logo" />
         </a>
       </header>
       <nav class="menu-wrap">
@@ -28,9 +28,9 @@ function App() {
             <div>
               <ul class="nav-links">
                 <li><a class = "nav-link" href="#home">Home</a></li>
+                <li><a class = "nav-link" href="#about">About</a></li>
                 <li><a class = "nav-link" href="#projects">Projects</a></li>
                 <li><a class = "nav-link" href="#contact">Contact</a></li>
-                <li><a class = "nav-link" href="/documents/ResumeAbrahamChen.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
               </ul>
             </div>
           </div>

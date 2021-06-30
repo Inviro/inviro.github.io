@@ -4,6 +4,12 @@
   --offdark: #040d38;
   /* --offdark: #6b7187; */
   --eggshell: #fafafa;
+
+  --animation-time: .3s;
+  --animation-style: ease;
+  --overlay-color:  rgba(238, 237, 241, .94);
+
+  scroll-behavior: smooth;
 }
 
 html {
@@ -14,8 +20,14 @@ html {
   border-radius: 25%;
 }
 
+header {
+  height: 65px;
+}
+
 #name-logo {
   margin-left: 5px;
+  height: 100%;
+  width: 325px;
 }
 
 /* Start home page styling */
@@ -45,6 +57,181 @@ html {
   margin-left: 18px;
 }
 /* End home page styling */
+
+.nav-links {
+  display: inline;
+  text-decoration: none;
+  position: relative;
+  list-style-type: none;
+}
+
+/* Menu Code Start */
+
+/* --- Start Boilerplate --- */
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.menu-wrap .toggler {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  height: 65px;
+  width: 65px;
+  opacity: 0;
+}
+
+.menu-wrap .burger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 65px;
+  height: 65px;
+  background-color: var(--offwhite);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* --- End Boilerplate --- */
+
+/* --- Start Hamburger Lines --- */
+/* All lines */
+.menu-wrap .burger > div,
+.menu-wrap .burger > div:before, 
+.menu-wrap .burger > div:after {
+  border-radius: 25%;
+}
+
+/* Center Line */
+.menu-wrap .burger > div {
+  position: relative;
+  width: 60%;
+  height: 4px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--animation-time) var(--animation-style);
+}
+
+/* Top and bottom lines */
+.menu-wrap .burger > div:before, 
+.menu-wrap .burger > div:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: inherit;
+  background: inherit;
+}
+
+/* Moves down bottom line */
+.menu-wrap .burger > div:after {
+  top: 10px;
+}
+/* --- End Hamburger Lines --- */
+
+/* --- Start Animations --- */
+/* Hover animation for unchecked state */
+.menu-wrap .toggler:not(:checked):hover + .burger > div {
+  transform: translateX(1px);
+}
+
+.menu-wrap .toggler:not(:checked):hover + .burger > div:before,
+.menu-wrap .toggler:not(:checked):hover + .burger > div:after {
+  transform: translateX(-1px);
+}
+
+/* Toggler animation */
+.menu-wrap .toggler:checked + .burger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns lines into X */
+.menu-wrap .toggler:checked + .burger > div:before,
+.menu-wrap .toggler:checked + .burger > div:after {
+  top:0;
+  transform: rotate(90deg);
+}
+
+/* Rotate on hover */
+.menu-wrap .toggler:checked:hover + .burger > div {
+  transform: rotate(225deg);
+}
+/* --- End Animations --- */
+
+/* Show Menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+  
+.menu-wrap .toggler:checked ~ .menu > div {
+    transform: scale(1);
+    transition-duration: .75s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+    opacity: 1;
+    transition:  opacity var(--animation-time) var(--animation-style) var(--animation-time);
+}
+
+.menu-wrap .menu {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-wrap .menu > div {
+    background: var(--overlay-color);
+    width: 200vh;
+    height: 200vh;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+}
+
+.menu-wrap .menu > div > div {
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+    list-style: none;
+    color: black;
+    font-size: 4.5vh;
+    padding: 2rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--animation-time) var(--animation-style);
+}
+
+.menu-wrap .menu > div > div > ul > li > a:hover {
+    text-decoration: underline;
+}
+/* Menu Code end */
 
 /* Tablet and Desktop View */
 @media only screen and (min-width: 600px) {
@@ -76,9 +263,7 @@ html {
     font-weight: 500;
     display: flex;
     padding-bottom: .2vw;
-    /* background-color: var(--highlight-color); */
     border-radius: 7px;
-    /* box-shadow: 5px 8px rgba(var(--primary-color), 0.200); */
   }
 
   .nav-links a {
@@ -88,8 +273,6 @@ html {
     font-weight: bold;
     font-size: 20px;
     margin: 2vh;
-    text-decoration: none;
-    position: relative;
   }
 
   .nav-links a:hover {
