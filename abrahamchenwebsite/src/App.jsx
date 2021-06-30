@@ -16,7 +16,7 @@ function App() {
         <title>Abraham Chen </title>
       </Helmet>
       <header>
-        <a href="#home">
+        <a href="#home" title="Visit home">
           <img src="NameLogo.svg" alt="Website home" id="name-logo" />
         </a>
       </header>
@@ -40,7 +40,8 @@ function App() {
         <div id='home'>
           <img 
           src='portrait.png' 
-          alt='Abraham, wearing glasses and a dark colored t-shirt smiles against a plain white background.' 
+          alt='Abraham, wearing glasses and a dark colored t-shirt smiles against a plain white background.'
+          title="Yep, that's me!"
           className='portrait'/>
           <h1>
             <div>Glad</div>

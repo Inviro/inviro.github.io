@@ -14,6 +14,7 @@
 
 html {
   background-color: var(--offwhite);
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .portrait {
@@ -250,40 +251,18 @@ header {
   }
 
   .menu-wrap .menu {
-    /* visibility: visible; */
-  }
-}
-
-/* Desktop specific styling */
-@media screen and (min-width: 1200px) {
-  /* .menu-wrap .menu {
-    visibility: hidden;
-  } */
-
-  /* Start nav link styling */
-  /* .nav-links {
-    z-index: 2;
-    position: fixed;
-    right: 5vw;
-    top: 1vh;
-    justify-content: space-around;
-    list-style: none;
-    font-weight: 500;
-    display: flex;
-    padding-bottom: .2vw;
-    border-radius: 7px;
+    visibility: visible;
+    left: 0;
+    width: 200px;
+    margin-top: 65px;
+    height: calc(100% - 65px);
   }
 
-  .nav-links a {
-    color: black;
-    letter-spacing: 2px;
-    font-weight: bold;
-    font-size: 20px;
-    margin: 2vh;
+  .menu-wrap .menu > div {
+    background-color: var(--tan);
   }
 
-  .nav-links a:hover {
-    text-decoration: underline;
-  } */
-  /* End nav link styling */
+  #content-wrap {
+    margin-left: 230px;
+  }
 }
