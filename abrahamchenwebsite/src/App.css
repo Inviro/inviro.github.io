@@ -1,9 +1,12 @@
 :root {
-  --offwhite: #e4e3e8;
+  --offwhite: #FFF8F0;
   --tan: #d6d1cd;
+  --splash-bg: rgb(250, 212, 142);
   --offdark: #040d38;
   /* --offdark: #6b7187; */
   --eggshell: #fafafa;
+
+  --bgcolor: var(--offwhite);
 
   --animation-time: .3s;
   --animation-style: ease;
@@ -13,7 +16,7 @@
 }
 
 html {
-  background-color: var(--offwhite);
+  background-color: var(--bgcolor);
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -26,6 +29,10 @@ header {
 }
 
 #name-logo {
+  /* top: -50px; */
+  /* left: 5px; */
+  /* z-index: 5; */
+  /* position: absolute; */
   margin-left: 5px;
   height: 100%;
   width: 325px;
@@ -35,7 +42,7 @@ header {
 #home {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color: var(--tan);
+  background-color: var(--splash-bg);
   gap: 20px;
   padding: 20px;
 }
@@ -95,7 +102,7 @@ header {
   z-index: 1;
   width: 65px;
   height: 65px;
-  background-color: var(--offwhite);
+  background-color: var(--bgcolor);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -225,6 +232,15 @@ header {
 }
 /* Menu Code end */
 
+.padded-content {
+  padding: 30px;
+  padding-bottom: 0px;
+}
+
+.padded-content-last {
+  padding: 30px;
+}
+
 /* Tablet and Desktop View */
 @media only screen and (min-width: 600px) {
   /* Start home page styling */
@@ -253,16 +269,16 @@ header {
   .menu-wrap .menu {
     visibility: visible;
     left: 0;
-    width: 200px;
+    width: 290px;
     margin-top: 65px;
     height: calc(100% - 65px);
   }
 
   .menu-wrap .menu > div {
-    background-color: var(--tan);
+    background-color: var(--bgcolor);
   }
 
   #content-wrap {
-    margin-left: 230px;
+    margin-left: 290px;
   }
 }
