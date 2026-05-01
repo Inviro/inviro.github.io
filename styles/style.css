@@ -83,13 +83,25 @@ footer > div {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    min-height: 140vh;
+    min-height: 100vh;
 }
 /* End Main Section */
+
+/* Particles Effect */
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
 
 /* Start Menu Section */
 /* Desktop Style */
 header {
+    position: relative;
     background-color: rgb(var(--header-color));
     height: 100vh;
 }
@@ -126,6 +138,16 @@ header {
     padding-top: 35vh;
     position: relative;
     height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.logo,
+.logo-text,
+#visits-display,
+#color-theme {
+    position: relative;
+    z-index: 2;
 }
 /* Logo Styling Code End */
 
