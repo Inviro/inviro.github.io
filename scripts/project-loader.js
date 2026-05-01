@@ -1,9 +1,49 @@
-/**
-   * setRepoStats takes the ID of a project and the repository name and updates its information
-   * @param {String} repoName The name of the repository to search for
-   * @param {Number} projectID The ID of the project to be altered
-*/
+
+const REPO_STATS_TTL_MS = 24 * 60 * 60 * 1000; // cache for 24 hours
+
+function getCachedRepoStats(repoName) {
+  try {
+    const raw = localStorage.getItem(`repo-stats-${repoName}`);
+    if (!raw) return null;
+
+    const cached = JSON.parse(raw);
+    if (Date.now() - cached.timestamp > REPO_STATS_TTL_MS) {
+      localStorage.removeItem(`repo-stats-${repoName}`);
+      return null;
+    }
+
+    return cached.data;
+  } catch (error) {
+    return null;
+  }
+}
+
+function cacheRepoStats(repoName, data) {
+  try {
+    const payload = {
+      timestamp: Date.now(),
+      data,
+    };
+    localStorage.setItem(`repo-stats-${repoName}`, JSON.stringify(payload));
+  } catch (error) {
+    // localStorage may be unavailable or full; ignore silently
+  }
+}
+
+function updateRepoStatsDOM(data, projectID) {
+  document.getElementById(`watch-${projectID}`).innerHTML = ` ${data.watchers_count}`;
+  document.getElementById(`star-${projectID}`).innerHTML = ` ${data.stargazers_count}`;
+  document.getElementById(`fork-${projectID}`).innerHTML = ` ${data.forks_count}`;
+  document.getElementById(`caption-${projectID}`).innerHTML = ` ${data.description}`;
+}
+
 function setRepoStats(repoName, projectID) {
+  const cached = getCachedRepoStats(repoName);
+  if (cached) {
+    updateRepoStatsDOM(cached, projectID);
+    return;
+  }
+
   const REPO_URL = `https://api.github.com/repos/inviro/${repoName}`; // Repository location in Github API
   // Using JavaScript fetch API to perform Github API calls for repository information
   fetch(REPO_URL, {
@@ -11,16 +51,16 @@ function setRepoStats(repoName, projectID) {
     headers: {
       Accept: 'application/json', // Accept JSON Files
       'Content-Type': 'application/json', // JSON content
-      'User-Agent': 'AbrahamChen.me', // Website user agent
+      'User-Agent': 'AbrahamChen.com', // Website user agent
     },
   })
     .then((response) => response.json())
     .then((data) => { // Anonomous functions that convert the response into JSON format
-      // Updating the repository information from the information obtained from the GET request
-      document.getElementById(`watch-${projectID}`).innerHTML = ` ${data.watchers_count}`;
-      document.getElementById(`star-${projectID}`).innerHTML = ` ${data.stargazers_count}`;
-      document.getElementById(`fork-${projectID}`).innerHTML = ` ${data.forks_count}`;
-      document.getElementById(`caption-${projectID}`).innerHTML = ` ${data.description}`;
+      cacheRepoStats(repoName, data);
+      updateRepoStatsDOM(data, projectID);
+    })
+    .catch(() => {
+      // If the fetch fails, let the page keep any existing default text.
     });
 }
 
