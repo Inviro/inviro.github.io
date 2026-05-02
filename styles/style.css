@@ -341,17 +341,13 @@ header {
 }
 /* End Styling for Project Picker */
 
-/* Start styling for animations */
-@keyframes rotation {
-    /* Make 360 degree rotation */
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(359deg);
-    }
+.noselect {
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
-/* End styling for animations */
 
 /* Tablet Style */
 @media screen and (max-width: 800px){
@@ -507,6 +503,11 @@ header {
     /* Menu bar links */
     .menu-wrap .menu > div > div > ul > li > a:hover {
         text-decoration: underline;
+    }
+
+    .menu-wrap {
+        position: relative;
+        z-index: 2;
     }
     /* Menu Code end */
     
