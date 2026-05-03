@@ -193,6 +193,8 @@ function updateHitCount() {
 
 // Particle effect variables
 let canvas, ctx, particles = [];
+let cursorX = -9999;
+let cursorY = -9999;
 
 // Initialize particle system
 function initParticles() {
@@ -219,25 +221,74 @@ function initParticles() {
     canvas.height = window.innerHeight;
   });
 
+  window.addEventListener('mousemove', (evt) => {
+    const pos = getMousePos(canvas, evt);
+    cursorX = pos.x;
+    cursorY = pos.y;
+  });
+
+  window.addEventListener('mousedown', (evt) => {
+    const pos = getMousePos(canvas, evt);
+
+      // Add burst of particles on click
+    for (let i = 0; i < 20; i++) {
+      particles.push({
+        x: pos.x,
+        y: pos.y,
+        vx: (Math.random() - 0.5) * 4,
+        vy: (Math.random() - 0.5) * 4,
+        size: Math.random() * 10 + 1,
+        color: `rgba(255, 255, 255, ${Math.random()})`,
+      });
+    }
+  });
+
   animateParticles();
 }
 
 // Animate particles
+
+function getMousePos(canvas, evt) {
+  const rect = canvas.getBoundingClientRect();
+  return {
+    x: evt.clientX - rect.left,
+    y: evt.clientY - rect.top,
+  };
+}
+
 function animateParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  particles.forEach(p => {
-    p.x += p.vx;
-    p.y += p.vy;
+  particles.forEach(particle => {
+    particle.x += particle.vx;
+    particle.y += particle.vy;
 
-    // Bounce off edges
-    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+    // Bounce off edges and the cursor
+    if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+    if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+
+    // Bounce off cursor
+    const dx = particle.x - cursorX;
+    const dy = particle.y - cursorY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance < particle.size) {
+      // Reverse velocity
+      particle.vx *= -1;
+      particle.vy *= -1;
+      
+    // Push particle away from cursor to prevent sticking
+    if (distance > 0) {
+      const pushForce = particle.size - distance + 5; // Add buffer
+      particle.x += (dx / distance) * pushForce;
+      particle.y += (dy / distance) * pushForce;
+    }
+}
 
     // Draw particle
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fillStyle = p.color;
+    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+    ctx.fillStyle = particle.color;
     ctx.fill();
   });
 
