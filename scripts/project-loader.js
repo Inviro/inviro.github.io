@@ -185,7 +185,7 @@ function updateHitCount() {
   fetch(atob(a))
     .then((resp) => resp.json())
     .then((jsonResp) => {
-      let htmlString = `<p><strong>Weekly visits:  </strong>${parseInt(jsonResp.weeklyHits, 10).toLocaleString()}`;
+      let htmlString = `<p class="noselect"><strong>Weekly visits:  </strong>${parseInt(jsonResp.weeklyHits, 10).toLocaleString()}`;
       htmlString += `<br><strong>Total visits:  </strong>${parseInt(jsonResp.totalHits, 10).toLocaleString()}</p>`;
       visitsDisplay.innerHTML = htmlString;
     });
@@ -221,17 +221,18 @@ function initParticles() {
     canvas.height = window.innerHeight;
   });
 
-  window.addEventListener('mousemove', (evt) => {
-    const pos = getMousePos(canvas, evt);
+  window.addEventListener('mousemove', (event) => {
+    const pos = getMousePos(event, canvas);
     cursorX = pos.x;
     cursorY = pos.y;
   });
 
-  window.addEventListener('mousedown', (evt) => {
-    const pos = getMousePos(canvas, evt);
+  window.addEventListener('mousedown', (event) => {
+    const particlesPerClick = 10;
+    const pos = getMousePos(event, canvas);
 
       // Add burst of particles on click
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < particlesPerClick; i++) {
       particles.push({
         x: pos.x,
         y: pos.y,
@@ -246,13 +247,12 @@ function initParticles() {
   animateParticles();
 }
 
-// Animate particles
-
-function getMousePos(canvas, evt) {
-  const rect = canvas.getBoundingClientRect();
+function getMousePos(event, canvas) {
+  const target = canvas || event.target;
+  const rect = target.getBoundingClientRect();
   return {
-    x: evt.clientX - rect.left,
-    y: evt.clientY - rect.top,
+    x: event.clientX - rect.left,
+    y: event.clientY - rect.top,
   };
 }
 

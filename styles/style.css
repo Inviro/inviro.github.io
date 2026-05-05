@@ -209,7 +209,7 @@ header {
     background-position: right -15px bottom -20px;
     background-repeat: no-repeat;
     box-shadow: 1px 2px 10px rgb(var(--primary-color));
-    width: 75vw;
+    width: 90vw;
     grid-template-columns: 2fr 2fr 1fr;
     padding-bottom: 0px;
 }
