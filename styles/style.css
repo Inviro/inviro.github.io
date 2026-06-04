@@ -181,17 +181,15 @@ header {
     text-decoration: underline;
 }
 
-/* Start Project Section */
-#projects > h1 {
+.heading {
     padding: 2vh;
-    padding-top: 5vh;
     font-size: xxx-large;
-    text-align: center;
-    letter-spacing: .3rem;
+    text-align: left;
     text-shadow: 2px 2px 2px var(--highlight-color);
     color: rgb(var(--primary-color));
 }
 
+/* Start Project Section */
 #project-wrap {
     display: grid;
     row-gap: 1.5rem;
@@ -348,6 +346,130 @@ header {
     -webkit-user-select: none;
     user-select: none;
 }
+
+/* Start about section */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.about-intro {
+    grid-column: 1;
+    grid-row: 2;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: rgba(var(--highlight-color));
+}
+
+.about-content {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+}
+
+.about-intro {
+    color: rgba(var(--primary-color), 0.8);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.feature-card i {
+    font-size: 2rem;
+    color: rgba(var(--primary-color), 0.9);
+    width: fit-content;
+}
+
+.feature-card h3 {
+    color: rgba(var(--primary-color), 0.9);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.feature-card p {
+    color: rgba(var(--primary-color), 0.7);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Tablet Style */
+@media screen and (max-width: 800px){
+    #about {
+        padding: 2rem 1rem;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    .about-icon i {
+        font-size: 50px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Style */
+@media screen and (max-width: 500px){
+    #about {
+        padding: 2rem 1rem;
+    }
+
+    .about-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .about-icon i {
+        font-size: 40px;
+    }
+
+    .about-intro {
+        font-size: 0.9rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1rem;
+    }
+
+    .feature-card p {
+        font-size: 0.85rem;
+    }
+}
+/* End about section */
 
 /* Tablet Style */
 @media screen and (max-width: 800px){
