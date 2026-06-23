@@ -212,6 +212,7 @@ function initParticles() {
       vy: (Math.random() - 0.5) * 2,
       size: Math.random() * 10 + 1,
       color: `rgba(255, 255, 255, ${Math.random()})`,
+      life: Math.ceil(Math.random() * 5), // Number of bounces before disappearing
     });
   }
 
@@ -240,6 +241,7 @@ function initParticles() {
         vy: (Math.random() - 0.5) * 4,
         size: Math.random() * 10 + 1,
         color: `rgba(255, 255, 255, ${Math.random()})`,
+        life: Math.ceil(Math.random() * 5), // Number of bounces before disappearing
       });
     }
   });
@@ -259,7 +261,9 @@ function getMousePos(event, canvas) {
 function animateParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  particles.forEach(particle => {
+  for (let i = 0; i < particles.length; i++) {
+    const particle = particles[i];
+
     particle.x += particle.vx;
     particle.y += particle.vy;
 
@@ -273,6 +277,12 @@ function animateParticles() {
     const distance = Math.sqrt(dx * dx + dy * dy);
 
     if (distance < particle.size) {
+      if (--particle.life <= 0) {
+        particles.splice(i, 1);
+        i--;
+        continue;
+      }
+
       // Reverse velocity
       particle.vx *= -1;
       particle.vy *= -1;
@@ -290,7 +300,7 @@ function animateParticles() {
     ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
     ctx.fillStyle = particle.color;
     ctx.fill();
-  });
+  };
 
   requestAnimationFrame(animateParticles);
 }
